@@ -7,7 +7,7 @@
    Every "Book" button on the site points here automatically.
    Example: const BOOKING_URL = "https://beautylodgebyanna.glossgenius.com/";
    ------------------------------------------------------------- */
-const BOOKING_URL = "#"; // placeholder — paste your GlossGenius link here
+const BOOKING_URL = "https://beautylodgebyanna.square.site/"; // placeholder — paste your GlossGenius link here
 
 /* Instagram handle (used in nav + footer) */
 const INSTAGRAM_URL = "https://www.instagram.com/beauty_lodge_by_anna/";

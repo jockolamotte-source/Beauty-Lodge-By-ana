@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Meet the team behind Beauty Lodge by Anna."
+  >
+
+  <title>Our Team | Beauty Lodge by Anna</title>
+
+  <!-- Use the same CSS file as the rest of your website -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       NAVIGATION
+       Keep this consistent with your other pages.
+       ========================================================= -->
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Main navigation">
+
+      <a href="index.html" class="nav-logo">
+        Beauty Lodge by Anna
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+
+        <!-- Adjust these links to match your existing pages -->
+        <a href="services.html">Services</a>
+        <a href="team.html" aria-current="page">Our Team</a>
+
+        <a href="#" data-ig>Instagram</a>
+
+        <a href="#" class="nav-book-button" data-book>
+          Book Now
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         PAGE INTRO
+         ========================================================= -->
+    <section class="team-hero">
+      <div class="team-hero-inner reveal">
+
+        <p class="eyebrow">Beauty Lodge by Anna</p>
+
+        <h1>Meet Our Team</h1>
+
+        <p class="team-intro">
+          <!-- REPLACE THIS INTRODUCTION -->
+          Get to know the people behind Beauty Lodge by Anna.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         TEAM MEMBERS
+         ========================================================= -->
+    <section class="team-section">
+      <div class="team-grid">
+
+        <!-- ===================== ANNA ========================== -->
+        <article class="team-member reveal">
+
+          <div class="team-photo-wrapper">
+            <img
+              src="images/anna.jpg"
+              alt="Anna from Beauty Lodge by Anna"
+              class="team-photo"
+            >
+          </div>
+
+          <div class="team-member-copy">
+
+            <p class="team-member-number">01</p>
+
+            <h2>Anna</h2>
+
+            <p class="team-title">
+              <!-- ADD ANNA'S TITLE HERE -->
+              Anna's Title
+            </p>
+
+            <div class="team-bio">
+              <!-- ADD ANNA'S BIO HERE -->
+              <p>
+                Add Anna's biography here. This can include her
+                experience, specialties, certifications, approach to
+                beauty, and what she loves about working with clients.
+              </p>
+
+              <p>
+                Add a second paragraph here for additional information
+                or remove this paragraph if it is not needed.
+              </p>
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- ====================== JAKE ========================= -->
+        <article class="team-member team-member-reverse reveal">
+
+          <div class="team-photo-wrapper">
+            <img
+              src="images/jake.jpg"
+              alt="Jake from Beauty Lodge by Anna"
+              class="team-photo"
+            >
+          </div>
+
+          <div class="team-member-copy">
+
+            <p class="team-member-number">02</p>
+
+            <h2>Jake</h2>
+
+            <p class="team-title">
+              <!-- ADD JAKE'S TITLE HERE -->
+              Jake's Title
+            </p>
+
+            <div class="team-bio">
+              <!-- ADD JAKE'S BIO HERE -->
+              <p>
+                Add Jake's biography here. This can explain his role
+                with the business, professional background, creative
+                contributions, or the work he handles behind the scenes.
+              </p>
+
+              <p>
+                Add a second paragraph here for additional information
+                or remove this paragraph if it is not needed.
+              </p>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         CALL TO ACTION
+         ========================================================= -->
+    <section class="team-cta">
+      <div class="team-cta-inner reveal">
+
+        <p class="eyebrow">Ready for your appointment?</p>
+
+        <h2>Come Visit the Lodge</h2>
+
+        <p>
+          Book your next beauty appointment with Beauty Lodge by Anna.
+        </p>
+
+        <a href="#" class="button primary-button" data-book>
+          Book Now
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       Copy your existing footer here if it has different content.
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <p>Beauty Lodge by Anna</p>
+
+      <a href="#" data-ig>
+        Follow us on Instagram
+      </a>
+
+      <p>
+        &copy; <span id="year"></span> Beauty Lodge by Anna.
+        All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- Use the same JavaScript file as the rest of the site -->
+  <script src="script.js"></script>
+
+  <script>
+    // Automatically updates the copyright year.
+    const year = document.getElementById("year");
+
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+  </script>
+
+</body>
+</html>

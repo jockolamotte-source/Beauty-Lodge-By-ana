@@ -7,7 +7,7 @@
    Every "Book" button opens this in an on-page overlay.
    To change it later, edit just this one line.
    ------------------------------------------------------------- */
-const SETMORE_URL = "https://beautytest.setmore.com";
+const SETMORE_URL = "https://beautylodgebyanna.setmore.com";
 
 /* Instagram (used in nav + footer) */
 const INSTAGRAM_URL = "https://www.instagram.com/beauty_lodge_by_anna/";

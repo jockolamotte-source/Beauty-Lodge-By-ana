@@ -3,26 +3,35 @@
    ============================================================ */
 
 /* -------------------------------------------------------------
-   1) YOUR BOOKING LINK  ← edit this ONE line when you have it.
-   Every "Book" button on the site points here automatically.
-   Example: const BOOKING_URL = "https://beautylodgebyanna.glossgenius.com/";
+   YOUR SETMORE BOOKING PAGE
+   Every "Book" button opens this in an on-page overlay.
+   To change it later, edit just this one line.
    ------------------------------------------------------------- */
-const BOOKING_URL = "https://beautylodgebyanna.square.site/"; // placeholder — paste your GlossGenius link here
+const SETMORE_URL = "https://beautytest.setmore.com";
 
-/* Instagram handle (used in nav + footer) */
+/* Instagram (used in nav + footer) */
 const INSTAGRAM_URL = "https://www.instagram.com/beauty_lodge_by_anna/";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Wire every booking button
+  // Turn every [data-book] button into a Setmore "Book Now" trigger.
+  // Buttons keep all their own styling — we just add the Setmore hook.
   document.querySelectorAll("[data-book]").forEach((el) => {
-    el.setAttribute("href", BOOKING_URL);
-    if (BOOKING_URL && BOOKING_URL !== "#") {
-      el.setAttribute("target", "_blank");
-      el.setAttribute("rel", "noopener");
-    }
+    el.classList.add("anywhere-book-now-button");
+    el.setAttribute("data-booking-url", SETMORE_URL);
+    el.setAttribute("data-new-tab", "false"); // opens in an on-page overlay
+    el.setAttribute("href", SETMORE_URL);      // fallback if the widget is slow to load
+    el.setAttribute("rel", "noopener");
   });
 
-  // Wire Instagram links
+  // Load the Setmore "Anywhere Book Now" widget (once, works on every page).
+  if (!document.getElementById("anywhere_book_now_script")) {
+    const s = document.createElement("script");
+    s.id = "anywhere_book_now_script";
+    s.src = "https://assets.setmore.com/integration/book-now/live/v1/anywhere-book-now.js";
+    document.body.appendChild(s);
+  }
+
+  // Instagram links
   document.querySelectorAll("[data-ig]").forEach((el) => {
     el.setAttribute("href", INSTAGRAM_URL);
     el.setAttribute("target", "_blank");

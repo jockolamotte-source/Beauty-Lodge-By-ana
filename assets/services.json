@@ -13,7 +13,7 @@
   },
   "lipBlush": {
     "name": "Lip Blush",
-    "state": "available"
+    "state": "hidden"
   },
   "naturalEyeliner": {
     "name": "Natural Eyeliner",

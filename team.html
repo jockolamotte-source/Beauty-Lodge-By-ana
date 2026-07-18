@@ -47,6 +47,16 @@
   />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Keep Lucy's photo visually balanced with the adult portraits. */
+    .team-photo-lucy {
+      object-fit: contain;
+      object-position: center;
+      padding: clamp(0.75rem, 2vw, 1.25rem);
+      background: var(--blush-soft);
+    }
+  </style>
 </head>
 
 <body>
@@ -323,7 +333,7 @@
             <img
               src="assets/lucy.jpg"
               alt="Lucy, Chief Snacks Officer at Beauty Lodge by Anna"
-              class="team-photo"
+              class="team-photo team-photo-lucy"
             />
           </div>
 

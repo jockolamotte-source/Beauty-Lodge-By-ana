@@ -1208,3 +1208,30 @@ p { margin: 0 0 1rem; }
   border-radius: 0;
   box-shadow: none;
 }
+/* ============================================================
+   FOOTER BRAND ALIGNMENT
+   Keeps the tagline and Beauty Lodge logo visually centered.
+   ============================================================ */
+
+.footer-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-grid > div:first-child .footer-tag {
+  width: 100%;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.footer .beauty-lodge-footer-logo {
+  display: block;
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+}

@@ -1,0 +1,22 @@
+{
+  "fullSet": {
+    "name": "Full Set",
+    "state": "available"
+  },
+  "refill": {
+    "name": "Refill",
+    "state": "available"
+  },
+  "powderBrows": {
+    "name": "Powder Brows",
+    "state": "available"
+  },
+  "lipBlush": {
+    "name": "Lip Blush",
+    "state": "available"
+  },
+  "naturalEyeliner": {
+    "name": "Natural Eyeliner",
+    "state": "available"
+  }
+}

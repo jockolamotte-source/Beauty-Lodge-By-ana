@@ -7,16 +7,24 @@
     "name": "Refill",
     "state": "available"
   },
+  "volumeSet": {
+    "name": "Volume Set",
+    "state": "available"
+  },
+  "volumeRefill": {
+    "name": "Volume Refill",
+    "state": "available"
+  },
   "powderBrows": {
     "name": "Powder Brows",
-    "state": "hidden"
+    "state": "available"
   },
   "lipBlush": {
     "name": "Lip Blush",
-    "state": "hidden"
+    "state": "available"
   },
   "naturalEyeliner": {
     "name": "Natural Eyeliner",
-    "state": "hidden"
+    "state": "available"
   }
 }

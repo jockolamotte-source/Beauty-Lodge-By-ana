@@ -40,7 +40,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles.css?v=20260718-services-build" />
+  <link rel="stylesheet" href="styles.css?v=20260718-sparkle-logo" />
 </head>
 
 <body>
@@ -51,11 +51,14 @@
 
       <a
         href="index.html"
-        class="brand"
+        class="brand brand-logo"
         aria-label="Beauty Lodge by Anna — home"
       >
-        Beauty Lodge
-        <small>by Anna</small>
+        <img
+          src="assets/logo-wordmark-burgundy.png"
+          alt="Beauty Lodge by Anna"
+          class="nav-brand-logo"
+        />
       </a>
 
       <button
@@ -149,12 +152,22 @@
 
     <div class="hero-inner">
 
-      <p
-        class="eyebrow"
-        style="color: var(--rosegold);"
-      >
-        Beauty Lodge by Anna
-      </p>
+      <div class="hero-sparkle-layer" aria-hidden="true">
+        <span class="hero-sparkle sparkle-one"></span>
+        <span class="hero-sparkle sparkle-two"></span>
+        <span class="hero-sparkle sparkle-three"></span>
+        <span class="hero-sparkle sparkle-four"></span>
+        <span class="hero-sparkle sparkle-five"></span>
+      </div>
+
+      <div class="hero-brand-mark" aria-hidden="true">
+        <img
+          src="assets/logo-botanical-blush.png"
+          alt=""
+        />
+        <span class="hero-sparkle sparkle-mark-left"></span>
+        <span class="hero-sparkle sparkle-mark-right"></span>
+      </div>
 
       <h1>
         Effortless beauty,<br />
@@ -251,7 +264,7 @@
               soft, natural finish.
             </p>
             <div class="svc-meta">
-              <span class="svc-price">$150</span>
+              <span class="svc-price">$120</span>
               <span class="svc-dur">1 hr 45 min</span>
             </div>
             <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
@@ -427,7 +440,7 @@
 
         <div class="svc-grid svc-grid-single">
           <article class="svc-card svc-card-featured" data-service="permanentJewelryFitting">
-            <img class="svc-img" src="assets/gallery-4.jpg" alt="Permanent jewelry fitting" />
+            <img class="svc-img" src="assets/gallery-1.jpg" alt="Permanent jewelry fitting" />
             <h3>Permanent Jewelry Fitting</h3>
             <p class="desc">
               Reserve time to choose your chain, charms, and custom fit.
@@ -486,10 +499,16 @@
         <h2>Meet Anna</h2>
 
         <p>
-            Beauty Lodge began with a simple belief: that beauty should feel natural and authentic.
-            Every appointment is unhurried and one-on-one, in a calm, private studio built for you
-            to unwind and relax while Anna brings out the best-looking version of you.
-      </p>
+          Beauty Lodge began with a simple belief: that beauty should
+          feel like a retreat, not a routine. Every appointment is
+          unhurried and one-on-one, in a calm, private studio built for
+          you to exhale.
+        </p>
+
+        <p class="about-sign">
+          — Anna
+        </p>
+
         <!-- NEW MEET OUR TEAM BUTTON -->
         <p style="margin-top: 1.6rem; margin-bottom: 0;">
           <a
@@ -842,8 +861,8 @@
             </li>
 
             <li>
-              <a href="tel:+16463083026">
-                646-308-3026
+              <a href="tel:+16167083026">
+                616-708-3026
               </a>
             </li>
 
@@ -923,7 +942,7 @@
   </footer>
 
 
-  <script src="script.js?v=20260718-services-build"></script>
+  <script src="script.js?v=20260718-sparkle-logo"></script>
 
   <script>
     const year = document.getElementById("yr");

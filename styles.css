@@ -1727,3 +1727,24 @@ p { margin: 0 0 1rem; }
     padding-inline: 0.9rem;
   }
 }
+/* Header badge-only logo */
+.brand.brand-logo-badge-only {
+  min-width: auto;
+  width: auto;
+  gap: 0;
+}
+
+.brand.brand-logo-badge-only .nav-brand-badge {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  object-fit: contain;
+}
+
+@media (max-width: 860px) {
+  .brand.brand-logo-badge-only .nav-brand-badge {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+}

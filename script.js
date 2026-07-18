@@ -231,7 +231,102 @@ async function loadPopupEvents() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+
+
+/* ============================================================
+   SERVICE AVAILABILITY
+   Controlled by assets/services.json through GitHub Actions.
+   States: available, unavailable, hidden.
+   ============================================================ */
+
+const SERVICES_CONFIG_URL = "assets/services.json";
+
+function addUnavailableBadge(card) {
+  if (card.querySelector(".service-status")) return;
+
+  const badge = document.createElement("p");
+  badge.className = "service-status";
+  badge.textContent = "Temporarily unavailable";
+
+  const heading = card.querySelector("h3");
+  if (heading) heading.insertAdjacentElement("afterend", badge);
+}
+
+function setServiceCardState(card, state) {
+  const bookButton = card.querySelector("[data-book]");
+
+  card.hidden = false;
+  card.classList.remove("service-unavailable");
+
+  const existingBadge = card.querySelector(".service-status");
+  if (existingBadge) existingBadge.remove();
+
+  if (bookButton) {
+    bookButton.removeAttribute("aria-disabled");
+    bookButton.removeAttribute("tabindex");
+    bookButton.classList.remove("btn-disabled");
+    bookButton.textContent = "Book";
+  }
+
+  if (state === "hidden") {
+    card.hidden = true;
+    return;
+  }
+
+  if (state === "unavailable") {
+    card.classList.add("service-unavailable");
+    addUnavailableBadge(card);
+
+    if (bookButton) {
+      bookButton.classList.add("btn-disabled");
+      bookButton.setAttribute("aria-disabled", "true");
+      bookButton.setAttribute("tabindex", "-1");
+      bookButton.removeAttribute("data-book");
+      bookButton.setAttribute("href", "#");
+      bookButton.textContent = "Unavailable";
+    }
+  }
+}
+
+function hideEmptyServiceGroups() {
+  document.querySelectorAll(".svc-group").forEach((group) => {
+    const cards = [...group.querySelectorAll(".svc-card[data-service]")];
+    group.hidden = cards.length > 0 && cards.every((card) => card.hidden);
+  });
+}
+
+async function loadServiceAvailability() {
+  const cards = document.querySelectorAll(".svc-card[data-service]");
+  if (!cards.length) return;
+
+  try {
+    const response = await fetch(`${SERVICES_CONFIG_URL}?v=${Date.now()}`, {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error(`Services configuration returned HTTP ${response.status}`);
+    }
+
+    const config = await response.json();
+
+    cards.forEach((card) => {
+      const serviceId = card.dataset.service;
+      const state = config?.[serviceId]?.state || "available";
+      setServiceCardState(card, state);
+    });
+
+    hideEmptyServiceGroups();
+  } catch (error) {
+    console.error("Unable to load service availability:", error);
+    cards.forEach((card) => setServiceCardState(card, "available"));
+  }
+}
+
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadServiceAvailability();
+
   document.querySelectorAll("[data-book]").forEach((el) => {
     el.classList.add("anywhere-book-now-button");
     el.setAttribute("data-booking-url", SETMORE_URL);

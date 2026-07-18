@@ -264,8 +264,8 @@ p { margin: 0 0 1rem; }
 }
 .svc-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
 }
 .svc-card {
   background: #fff;
@@ -693,6 +693,12 @@ p { margin: 0 0 1rem; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+@media (max-width: 1080px) {
+  .svc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 860px) {
   .nav-toggle { display: inline-flex; }
   .nav-links {
@@ -720,9 +726,12 @@ p { margin: 0 0 1rem; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 600px) {
+  .svc-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 480px) {
   .gallery-grid { grid-template-columns: 1fr; }
-  .svc-grid { grid-template-columns: 1fr; }
 }
 
 /* ---- accessibility ---- */

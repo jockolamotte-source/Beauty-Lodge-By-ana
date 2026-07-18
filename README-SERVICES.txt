@@ -17,3 +17,7 @@ Hidden: the card disappears completely.
 
 The action updates assets/services.json and commits the change automatically.
 GitHub Pages normally refreshes shortly after the commit.
+
+Added services:
+- Volume Set — $130 — 2 hr
+- Volume Refill — $70 — 1 hr 15 min

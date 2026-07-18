@@ -1,0 +1,11 @@
+Beauty Lodge Website
+Version: V3.6.3
+
+Based on: V3.6.2
+
+Changes:
+- Replaced the header badge/text combination with the clean teaser-style wordmark.
+- Added cinematic lens-flare sparkles with halos and longer light rays.
+- Added a one-time shimmering sweep and glow to the full hero logo.
+- All sparkle and flare effects run once during page load, then disappear.
+- Preserved the V3.6.2 service images and Permanent Jewelry gallery-4 image.

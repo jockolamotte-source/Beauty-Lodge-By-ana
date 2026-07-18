@@ -49,12 +49,68 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* Keep Lucy's photo visually balanced with the adult portraits. */
+    /* Team page spacing and photo balance */
+    .team-hero {
+      padding-top: clamp(3.75rem, 7vw, 5.5rem);
+      padding-bottom: clamp(2.75rem, 5vw, 4rem);
+    }
+
+    .team-section {
+      padding-top: clamp(2.5rem, 5vw, 4rem);
+      padding-bottom: clamp(4rem, 7vw, 6rem);
+    }
+
+    .team-grid {
+      gap: clamp(3.75rem, 7vw, 6rem);
+    }
+
+    .team-member {
+      gap: clamp(2.25rem, 5vw, 4.5rem);
+    }
+
+    /* Lucy's source image is landscape, so give it a landscape frame. */
+    .team-member-lucy .team-photo-wrapper {
+      aspect-ratio: 4 / 3;
+    }
+
     .team-photo-lucy {
-      object-fit: contain;
-      object-position: center;
-      padding: clamp(0.75rem, 2vw, 1.25rem);
-      background: var(--blush-soft);
+      object-fit: cover;
+      object-position: center 45%;
+      padding: 0;
+      background: none;
+    }
+
+    @media (max-width: 860px) {
+      .team-hero {
+        padding-top: 3.5rem;
+        padding-bottom: 2.5rem;
+      }
+
+      .team-section {
+        padding-top: 2rem;
+      }
+
+      .team-grid {
+        gap: 4rem;
+      }
+
+      .team-member {
+        gap: 2rem;
+      }
+
+      .team-member-lucy .team-photo-wrapper {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .team-hero {
+        padding-top: 3rem;
+      }
+
+      .team-grid {
+        gap: 3.5rem;
+      }
     }
   </style>
 </head>
@@ -318,7 +374,7 @@
 
             <div class="team-bio">
               <p>
-                “Honey, make me a website.”
+                “Honey, build me a website.”
               </p>
             </div>
 
@@ -327,7 +383,7 @@
 
 
         <!-- ================= LUCY ================= -->
-        <article class="team-member reveal">
+        <article class="team-member team-member-lucy reveal">
 
           <div class="team-photo-wrapper">
             <img
@@ -342,13 +398,13 @@
             <p class="team-member-number">03</p>
 
             <p class="eyebrow">
-              Behind the Lodge
+              Chief Snacks Officer
             </p>
 
             <h2>Lucy</h2>
 
             <p class="team-title">
-              Chief Snacks Officer (CSO)
+              Snack Specialist &amp; Pickle Connoisseur
             </p>
 
             <div class="team-bio">

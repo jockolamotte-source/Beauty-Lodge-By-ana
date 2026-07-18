@@ -1,10 +1,10 @@
 {
   "fullSet": {
-    "name": "Full Set",
+    "name": "Natural Full Set",
     "state": "available"
   },
   "refill": {
-    "name": "Refill",
+    "name": "Natural Refill",
     "state": "available"
   },
   "volumeSet": {
@@ -13,6 +13,22 @@
   },
   "volumeRefill": {
     "name": "Volume Refill",
+    "state": "available"
+  },
+  "lashLiftTint": {
+    "name": "Lash Lift & Tint",
+    "state": "available"
+  },
+  "browTintTweeze": {
+    "name": "Brow Tint & Tweeze",
+    "state": "available"
+  },
+  "lashRemoval": {
+    "name": "Lash Removal",
+    "state": "available"
+  },
+  "lashBath": {
+    "name": "Lash Bath",
     "state": "available"
   },
   "powderBrows": {
@@ -26,5 +42,9 @@
   "naturalEyeliner": {
     "name": "Natural Eyeliner",
     "state": "hidden"
+  },
+  "permanentJewelryFitting": {
+    "name": "Permanent Jewelry Fitting",
+    "state": "available"
   }
 }

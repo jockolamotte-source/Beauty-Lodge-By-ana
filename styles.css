@@ -1211,22 +1211,68 @@ p { margin: 0 0 1rem; }
 
 
 /* ============================================================
-   NAV WORDMARK + ONE-TIME HERO SPARKLE REVEAL
+   FINAL HEADER BRAND + ONE-TIME HERO LOGO/SPARKLE REVEAL
+   Sparkles animate once when the page loads and then disappear.
    ============================================================ */
+
 .brand-logo {
   display: inline-flex;
   align-items: center;
+  gap: 0.7rem;
   flex: 0 0 auto;
+  min-width: 260px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.nav-brand-badge {
+  display: block;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  object-fit: contain;
+}
+
+.nav-brand-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 170px;
+  color: var(--burgundy);
   line-height: 1;
 }
 
-.nav-brand-logo {
-  display: block;
-  width: clamp(128px, 12vw, 172px);
-  height: auto;
-  max-height: 70px;
-  object-fit: contain;
+.nav-brand-name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.75rem, 2.15vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
 }
+
+.nav-brand-by {
+  position: relative;
+  margin-top: 0.15rem;
+  padding-inline: 1.55rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.25rem, 1.55vw, 1.65rem);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.nav-brand-by::before,
+.nav-brand-by::after {
+  content: "";
+  position: absolute;
+  top: 54%;
+  width: 1.05rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.nav-brand-by::before { left: 0; }
+.nav-brand-by::after  { right: 0; }
 
 .hero-inner {
   position: relative;
@@ -1235,71 +1281,75 @@ p { margin: 0 0 1rem; }
 
 .hero-brand-mark {
   position: relative;
-  display: inline-grid;
+  display: grid;
   place-items: center;
-  width: 86px;
-  min-height: 54px;
-  margin: 0 auto 0.65rem;
+  width: clamp(145px, 14vw, 190px);
+  height: clamp(145px, 14vw, 190px);
+  margin: -0.35rem auto 0.4rem;
   opacity: 0;
-  transform: translateY(8px) scale(0.94);
-  animation: heroMarkIn 0.75s var(--ease) 0.3s forwards;
+  transform: translateY(10px) scale(0.9);
+  animation: heroMarkIn 0.9s var(--ease) 0.22s forwards;
+  z-index: 5;
 }
 
 .hero-brand-mark img {
   display: block;
-  width: 70px;
-  height: auto;
-  max-height: 56px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 10px rgba(42, 24, 27, 0.16));
+  filter:
+    drop-shadow(0 0 8px rgba(244, 227, 227, 0.34))
+    drop-shadow(0 0 18px rgba(201, 162, 126, 0.22));
 }
 
 .hero h1 {
   opacity: 0;
-  transform: translateY(20px);
-  animation: heroCopyIn 0.85s var(--ease) 0.42s forwards;
+  transform: translateY(22px);
+  animation: heroCopyIn 0.9s var(--ease) 0.42s forwards;
 }
 
 .hero .chain {
   opacity: 0;
   transform: translateY(10px);
-  animation: heroCopyIn 0.7s var(--ease) 0.62s forwards;
+  animation: heroCopyIn 0.72s var(--ease) 0.64s forwards;
 }
 
 .hero .lede {
   opacity: 0;
   transform: translateY(14px);
-  animation: heroCopyIn 0.75s var(--ease) 0.72s forwards;
+  animation: heroCopyIn 0.78s var(--ease) 0.76s forwards;
 }
 
 .hero .hero-cta {
   opacity: 0;
   transform: translateY(14px);
-  animation: heroCopyIn 0.75s var(--ease) 0.86s forwards;
+  animation: heroCopyIn 0.78s var(--ease) 0.9s forwards;
 }
 
 .hero-bg {
-  transform: scale(1.035);
-  animation: heroImageSettle 1.65s var(--ease) forwards;
+  transform: scale(1.04);
+  animation: heroImageSettle 1.75s var(--ease) forwards;
 }
 
 .hero-sparkle-layer {
   position: absolute;
-  inset: 0;
+  inset: -5%;
   pointer-events: none;
-  overflow: visible;
-  z-index: 3;
+  overflow: hidden;
+  z-index: 4;
 }
 
 .hero-sparkle {
-  --sparkle-size: 12px;
+  --sparkle-size: 18px;
+  --sparkle-delay: 0.55s;
+  --sparkle-glow: 24px;
   position: absolute;
   display: block;
   width: var(--sparkle-size);
   height: var(--sparkle-size);
   opacity: 0;
-  transform: scale(0.2) rotate(0deg);
-  animation: heroSparkle 1.15s var(--ease) forwards;
+  transform: scale(0.05) rotate(0deg);
+  animation: heroSparkleBurst 1.55s cubic-bezier(.16,.84,.28,1) var(--sparkle-delay) 1 both;
 }
 
 .hero-sparkle::before,
@@ -1308,9 +1358,18 @@ p { margin: 0 0 1rem; }
   position: absolute;
   inset: 0;
   margin: auto;
-  background: linear-gradient(180deg, #f8e7e3, var(--rosegold));
   border-radius: 999px;
-  box-shadow: 0 0 12px rgba(244, 227, 227, 0.55);
+  background:
+    linear-gradient(
+      180deg,
+      #fff7f2 0%,
+      #f4e3e3 45%,
+      #d8ab86 100%
+    );
+  box-shadow:
+    0 0 8px rgba(255, 247, 242, 0.95),
+    0 0 var(--sparkle-glow) rgba(244, 227, 227, 0.82),
+    0 0 calc(var(--sparkle-glow) * 1.8) rgba(201, 162, 126, 0.44);
 }
 
 .hero-sparkle::before {
@@ -1323,59 +1382,76 @@ p { margin: 0 0 1rem; }
   height: 2px;
 }
 
-.sparkle-one {
-  --sparkle-size: 15px;
-  top: 12%;
-  left: 18%;
-  animation-delay: 0.62s;
+.hero-sparkle:nth-child(3n)::before {
+  width: 3px;
 }
 
-.sparkle-two {
-  --sparkle-size: 10px;
-  top: 22%;
-  right: 17%;
-  animation-delay: 0.82s;
+.hero-sparkle:nth-child(4n)::after {
+  height: 3px;
 }
 
-.sparkle-three {
-  --sparkle-size: 13px;
-  top: 54%;
-  left: 29%;
-  animation-delay: 0.98s;
-}
-
-.sparkle-four {
-  --sparkle-size: 9px;
-  top: 58%;
-  right: 28%;
-  animation-delay: 1.08s;
-}
-
-.sparkle-five {
-  --sparkle-size: 11px;
-  bottom: 13%;
-  left: 51%;
-  animation-delay: 1.18s;
-}
+/* Larger dramatic points */
+.sparkle-1  { --sparkle-size: 34px; --sparkle-delay: .44s; --sparkle-glow: 34px; top: 8%;  left: 8%; }
+.sparkle-2  { --sparkle-size: 18px; --sparkle-delay: .60s; top: 19%; left: 25%; }
+.sparkle-3  { --sparkle-size: 25px; --sparkle-delay: .74s; top: 16%; right: 18%; }
+.sparkle-4  { --sparkle-size: 43px; --sparkle-delay: .88s; --sparkle-glow: 42px; top: 43%; right: 5%; }
+.sparkle-5  { --sparkle-size: 15px; --sparkle-delay: .98s; top: 51%; left: 12%; }
+.sparkle-6  { --sparkle-size: 29px; --sparkle-delay: 1.08s; --sparkle-glow: 32px; bottom: 22%; left: 7%; }
+.sparkle-7  { --sparkle-size: 19px; --sparkle-delay: 1.18s; bottom: 12%; right: 21%; }
+.sparkle-8  { --sparkle-size: 37px; --sparkle-delay: 1.28s; --sparkle-glow: 38px; bottom: 8%; right: 6%; }
+.sparkle-9  { --sparkle-size: 13px; --sparkle-delay: .68s; top: 34%; left: 4%; }
+.sparkle-10 { --sparkle-size: 16px; --sparkle-delay: .82s; top: 28%; right: 7%; }
+.sparkle-11 { --sparkle-size: 12px; --sparkle-delay: 1.00s; top: 67%; right: 14%; }
+.sparkle-12 { --sparkle-size: 14px; --sparkle-delay: 1.14s; bottom: 33%; left: 29%; }
+.sparkle-13 { --sparkle-size: 21px; --sparkle-delay: 1.30s; bottom: 18%; left: 46%; }
+.sparkle-14 { --sparkle-size: 11px; --sparkle-delay: 1.42s; top: 10%; right: 39%; }
 
 .sparkle-mark-left,
-.sparkle-mark-right {
-  --sparkle-size: 8px;
-  top: 18px;
+.sparkle-mark-right,
+.sparkle-mark-top,
+.sparkle-mark-bottom {
+  --sparkle-glow: 28px;
+  z-index: 7;
 }
 
 .sparkle-mark-left {
-  left: -1px;
-  animation-delay: 0.55s;
+  --sparkle-size: 18px;
+  --sparkle-delay: .48s;
+  top: 42%;
+  left: -8px;
 }
 
 .sparkle-mark-right {
-  right: -1px;
-  animation-delay: 0.72s;
+  --sparkle-size: 21px;
+  --sparkle-delay: .68s;
+  top: 30%;
+  right: -10px;
+}
+
+.sparkle-mark-top {
+  --sparkle-size: 24px;
+  --sparkle-delay: .84s;
+  top: -9px;
+  left: 51%;
+}
+
+.sparkle-mark-bottom {
+  --sparkle-size: 16px;
+  --sparkle-delay: 1.02s;
+  bottom: -5px;
+  left: 42%;
 }
 
 @keyframes heroMarkIn {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0) scale(1.025);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
@@ -1392,63 +1468,123 @@ p { margin: 0 0 1rem; }
   to { transform: scale(1); }
 }
 
-@keyframes heroSparkle {
+@keyframes heroSparkleBurst {
   0% {
     opacity: 0;
-    transform: scale(0.2) rotate(0deg);
+    transform: scale(0.05) rotate(0deg);
   }
-  32% {
-    opacity: 0.95;
-    transform: scale(1) rotate(45deg);
+  18% {
+    opacity: 0.55;
   }
-  68% {
-    opacity: 0.72;
-    transform: scale(0.72) rotate(88deg);
+  42% {
+    opacity: 1;
+    transform: scale(1.12) rotate(45deg);
+  }
+  66% {
+    opacity: 0.9;
+    transform: scale(0.88) rotate(88deg);
   }
   100% {
     opacity: 0;
-    transform: scale(0.15) rotate(125deg);
+    transform: scale(0.08) rotate(145deg);
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1040px) {
+  .brand-logo {
+    min-width: 205px;
+    gap: 0.45rem;
+  }
+
+  .nav-brand-badge {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .nav-brand-copy {
+    min-width: 135px;
+  }
+
+  .nav-brand-name {
+    font-size: 1.65rem;
+  }
+
+  .nav-brand-by {
+    font-size: 1.15rem;
   }
 }
 
 @media (max-width: 860px) {
-  .nav-brand-logo {
-    width: 132px;
-    max-height: 60px;
+  .brand-logo {
+    min-width: 0;
+  }
+
+  .nav-brand-badge {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+
+  .nav-brand-copy {
+    min-width: 132px;
   }
 
   .hero-brand-mark {
-    width: 76px;
-    min-height: 48px;
+    width: 145px;
+    height: 145px;
+    margin-bottom: 0.15rem;
   }
 
-  .hero-brand-mark img {
-    width: 61px;
-    max-height: 49px;
-  }
-
-  .sparkle-one { left: 8%; }
-  .sparkle-two { right: 8%; }
-  .sparkle-three { left: 18%; }
-  .sparkle-four { right: 18%; }
+  .sparkle-1 { left: 2%; }
+  .sparkle-4 { right: 1%; }
+  .sparkle-6 { left: 2%; }
+  .sparkle-8 { right: 2%; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .nav-inner {
-    padding-block: 0.62rem;
+    padding-block: 0.55rem;
   }
 
-  .nav-brand-logo {
-    width: 116px;
+  .nav-brand-badge {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+
+  .nav-brand-copy {
+    min-width: 112px;
+  }
+
+  .nav-brand-name {
+    font-size: 1.38rem;
+  }
+
+  .nav-brand-by {
+    font-size: 1rem;
+    padding-inline: 1.1rem;
+  }
+
+  .nav-brand-by::before,
+  .nav-brand-by::after {
+    width: 0.75rem;
   }
 
   .hero-brand-mark {
-    margin-bottom: 0.35rem;
+    width: 124px;
+    height: 124px;
+    margin-top: 0;
   }
 
-  .sparkle-one,
-  .sparkle-two {
-    top: 17%;
+  .sparkle-2,
+  .sparkle-3,
+  .sparkle-9,
+  .sparkle-10,
+  .sparkle-11,
+  .sparkle-12 {
+    display: none;
   }
 }
 
@@ -1458,14 +1594,13 @@ p { margin: 0 0 1rem; }
   .hero h1,
   .hero .chain,
   .hero .lede,
-  .hero .hero-cta,
-  .hero-sparkle {
+  .hero .hero-cta {
     animation: none !important;
     opacity: 1;
     transform: none;
   }
 
   .hero-sparkle {
-    display: none;
+    display: none !important;
   }
 }

@@ -1117,3 +1117,80 @@ p { margin: 0 0 1rem; }
     align-self: center;
   }
 }
+
+
+/* ============================================================
+   2026-07 SERVICE CATEGORIES & FOOTER BRANDING
+   ============================================================ */
+
+/* Four service cards on one row where requested. */
+.svc-group-four .svc-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* A focused single-card presentation for permanent jewelry booking. */
+.svc-grid-single {
+  grid-template-columns: minmax(300px, 620px);
+  justify-content: center;
+}
+
+.svc-card-featured {
+  width: 100%;
+}
+
+.svc-price-variable {
+  font-size: 1.35rem;
+}
+
+/* Normalize all service photos and keep each source independently centered. */
+.svc-card .svc-img {
+  display: block;
+  width: calc(100% + 3.8rem);
+  max-width: none;
+  height: 230px;
+  margin: -2rem -1.9rem 1.5rem;
+  object-fit: cover;
+  transform: none;
+}
+
+.svc-card[data-service="fullSet"] .svc-img { object-position: 48% 48%; }
+.svc-card[data-service="refill"] .svc-img { object-position: 50% 48%; }
+.svc-card[data-service="volumeSet"] .svc-img { object-position: 50% 50%; }
+.svc-card[data-service="volumeRefill"] .svc-img { object-position: 50% 48%; }
+.svc-card[data-service="lashLiftTint"] .svc-img { object-position: 50% 48%; }
+.svc-card[data-service="browTintTweeze"] .svc-img { object-position: 50% 45%; }
+.svc-card[data-service="lashRemoval"] .svc-img { object-position: 48% 48%; }
+.svc-card[data-service="lashBath"] .svc-img { object-position: 50% 48%; }
+.svc-card[data-service="permanentJewelryFitting"] .svc-img { object-position: center; }
+
+.footer .beauty-lodge-footer-logo {
+  width: min(230px, 100%);
+  height: auto;
+  border-radius: 4px;
+}
+
+@media (max-width: 1100px) {
+  .svc-group-four .svc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .svc-card .svc-img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .svc-group-four .svc-grid,
+  .svc-grid-single {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-card .svc-img {
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .footer .beauty-lodge-footer-logo {
+    margin-inline: auto;
+  }
+}

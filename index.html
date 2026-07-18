@@ -40,49 +40,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles.css?v=20260717-lash-image-fix" />
-
-  <style>
-    /* Lash card image alignment */
-    .svc-card .svc-img {
-      display: block;
-      width: calc(100% + 3.8rem) !important;
-      max-width: none !important;
-      height: 230px !important;
-      margin: -2rem -1.9rem 1.5rem !important;
-      object-fit: cover !important;
-      transform: none !important;
-      transform-origin: center !important;
-    }
-
-    .svc-card[data-service="fullSet"] .svc-img {
-      object-position: 48% 48% !important;
-    }
-
-    .svc-card[data-service="refill"] .svc-img {
-      object-position: 50% 48% !important;
-    }
-
-    .svc-card[data-service="volumeSet"] .svc-img {
-      object-position: 50% 50% !important;
-    }
-
-    .svc-card[data-service="volumeRefill"] .svc-img {
-      object-position: 50% 48% !important;
-    }
-
-    @media (max-width: 1100px) {
-      .svc-card .svc-img {
-        height: 220px !important;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .svc-card .svc-img {
-        height: 240px !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=20260718-services-build" />
 </head>
 
 <body>
@@ -258,16 +216,9 @@
 
       <div class="section-head reveal">
 
-        <div
-          class="chain"
-          aria-hidden="true"
-        >
+        <div class="chain" aria-hidden="true">
           <svg viewBox="0 0 90 24">
-            <g
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.4"
-            >
+            <g fill="none" stroke="currentColor" stroke-width="1.4">
               <ellipse cx="18" cy="12" rx="10" ry="6" />
               <ellipse cx="45" cy="12" rx="10" ry="6" />
               <ellipse cx="72" cy="12" rx="10" ry="6" />
@@ -286,139 +237,132 @@
 
 
       <!-- ================= LASHES ================= -->
-      <div class="svc-group reveal">
-
-        <h3 class="svc-group-title">
-          Lashes
-        </h3>
+      <div class="svc-group svc-group-four reveal">
+        <h3 class="svc-group-title">Lashes</h3>
 
         <div class="svc-grid">
 
           <article class="svc-card" data-service="fullSet">
-
-            <img
-              class="svc-img"
-              src="assets/card-fullset.jpg"
-              alt="Full set of lash extensions"
-            />
-
+            <img class="svc-img" src="assets/card-fullset.jpg" alt="Natural full set of lash extensions" />
             <h3>Natural Full Set</h3>
-
             <p class="desc">
-              A complete set of custom-mapped extensions applied lash
-              by lash to flatter your eye shape — feather-light and
-              tailored, from a soft natural look to full volume.
+              A complete set of custom-mapped extensions applied lash by lash
+              to flatter your eye shape — feather-light and tailored for a
+              soft, natural finish.
             </p>
-
             <div class="svc-meta">
               <span class="svc-price">$120</span>
               <span class="svc-dur">1 hr 45 min</span>
             </div>
-
-            <a
-              class="btn btn-ghost btn-sm"
-              data-book
-              href="#"
-            >
-              Book
-            </a>
-
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
           </article>
 
-
           <article class="svc-card" data-service="refill">
-
-            <img
-              class="svc-img"
-              src="assets/card-naturalrefill.jpg"
-              alt="Lash refill close-up"
-            />
-
+            <img class="svc-img" src="assets/card-naturalrefill.jpg" alt="Natural lash refill" />
             <h3>Natural Refill</h3>
-
             <p class="desc">
-              Keeps your set full and fresh by replacing grown-out
-              lashes. Best booked every two to three weeks to maintain
-              your look.
+              Keeps your natural set full and fresh by replacing grown-out
+              lashes. Best booked every two to three weeks.
             </p>
-
             <div class="svc-meta">
               <span class="svc-price">$65</span>
               <span class="svc-dur">1 hr</span>
             </div>
-
-            <a
-              class="btn btn-ghost btn-sm"
-              data-book
-              href="#"
-            >
-              Book
-            </a>
-
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
           </article>
 
-
           <article class="svc-card" data-service="volumeSet">
-
-            <img
-              class="svc-img"
-              src="assets/card-volume.jpg"
-              alt="Volume set of lash extensions"
-            />
-
+            <img class="svc-img" src="assets/card-volume.jpg" alt="Volume set of lash extensions" />
             <h3>Volume Set</h3>
-
             <p class="desc">
               A fuller, more dramatic lash set created with lightweight
-              volume fans. Each set is customized to your eye shape and
-              desired level of softness, texture, and density.
+              volume fans and customized to your eye shape and desired density.
             </p>
-
             <div class="svc-meta">
               <span class="svc-price">$130</span>
               <span class="svc-dur">2 hr</span>
             </div>
-
-            <a
-              class="btn btn-ghost btn-sm"
-              data-book
-              href="#"
-            >
-              Book
-            </a>
-
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
           </article>
 
-
           <article class="svc-card" data-service="volumeRefill">
-
-            <img
-              class="svc-img"
-              src="assets/card-refill.jpg"
-              alt="Volume lash refill"
-            />
-
+            <img class="svc-img" src="assets/card-refill.jpg" alt="Volume lash refill" />
             <h3>Volume Refill</h3>
-
             <p class="desc">
               Refreshes your volume set by replacing grown-out fans and
-              filling sparse areas to restore fullness, balance, and the
-              custom shape of your original set.
+              filling sparse areas to restore fullness and balance.
             </p>
-
             <div class="svc-meta">
               <span class="svc-price">$70</span>
               <span class="svc-dur">1 hr 15 min</span>
             </div>
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
+          </article>
 
-            <a
-              class="btn btn-ghost btn-sm"
-              data-book
-              href="#"
-            >
-              Book
-            </a>
+        </div>
+      </div>
 
+
+      <!-- ================= LASH & BROW ENHANCEMENTS ================= -->
+      <div class="svc-group svc-group-four reveal">
+        <h3 class="svc-group-title">Lash &amp; Brow Enhancements</h3>
+
+        <div class="svc-grid">
+
+          <article class="svc-card" data-service="lashLiftTint">
+            <img class="svc-img" src="assets/card-naturalrefill.jpg" alt="Lash lift and tint" />
+            <h3>Lash Lift &amp; Tint</h3>
+            <p class="desc">
+              Lifts and curls your natural lashes, then deepens their color for
+              a longer, fuller-looking finish without extensions.
+            </p>
+            <div class="svc-meta">
+              <span class="svc-price">$100</span>
+              <span class="svc-dur">1 hr 15 min</span>
+            </div>
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
+          </article>
+
+          <article class="svc-card" data-service="browTintTweeze">
+            <img class="svc-img" src="assets/card-brows.jpg" alt="Brow tint and tweeze" />
+            <h3>Brow Tint &amp; Tweeze</h3>
+            <p class="desc">
+              A customized brow tint paired with precise tweezing to improve
+              shape, add definition, and create a fuller-looking brow.
+            </p>
+            <div class="svc-meta">
+              <span class="svc-price">$50</span>
+              <span class="svc-dur">45 min</span>
+            </div>
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
+          </article>
+
+          <article class="svc-card" data-service="lashRemoval">
+            <img class="svc-img" src="assets/card-fullset.jpg" alt="Professional lash extension removal" />
+            <h3>Lash Removal</h3>
+            <p class="desc">
+              Gentle professional removal of existing lash extensions while
+              protecting the health and comfort of your natural lashes.
+            </p>
+            <div class="svc-meta">
+              <span class="svc-price">$30</span>
+              <span class="svc-dur">45 min</span>
+            </div>
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
+          </article>
+
+          <article class="svc-card" data-service="lashBath">
+            <img class="svc-img" src="assets/card-refill.jpg" alt="Lash bath cleansing service" />
+            <h3>Lash Bath</h3>
+            <p class="desc">
+              A focused lash cleanse that removes makeup, oils, and buildup to
+              leave your lashes fresh and ready for maintenance or styling.
+            </p>
+            <div class="svc-meta">
+              <span class="svc-price">$30</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
           </article>
 
         </div>
@@ -427,117 +371,75 @@
 
       <!-- ================= PERMANENT MAKEUP ================= -->
       <div class="svc-group reveal">
-
-        <h3 class="svc-group-title">
-          Permanent Makeup
-        </h3>
+        <h3 class="svc-group-title">Permanent Makeup</h3>
 
         <div class="svc-grid">
 
           <article class="svc-card" data-service="powderBrows">
-
-            <img
-              class="svc-img"
-              src="assets/card-brows.jpg"
-              alt="Powder brows before and after"
-            />
-
+            <img class="svc-img" src="assets/card-brows.jpg" alt="Powder brows before and after" />
             <h3>Powder Brows</h3>
-
             <p class="desc">
-              Soft, shaded brows with a filled-in powder finish that
-              frames the face. Your perfecting touch-up is included so
-              the color heals even and true.
+              Soft, shaded brows with a filled-in powder finish that frames the
+              face. Your perfecting touch-up is included.
             </p>
-
             <div class="svc-meta">
               <span class="svc-price">$400</span>
-
-              <span class="svc-dur">
-                2 hr 30 min · touch-up incl.
-              </span>
+              <span class="svc-dur">2 hr 30 min · touch-up incl.</span>
             </div>
-
-            <a
-              class="btn btn-ghost btn-sm"
-              data-book
-              href="#"
-            >
-              Book
-            </a>
-
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
           </article>
-
 
           <article class="svc-card" data-service="lipBlush">
-
-            <img
-              class="svc-img"
-              src="assets/card-lipblush.jpg"
-              alt="Lip blush result"
-            />
-
+            <img class="svc-img" src="assets/card-lipblush.jpg" alt="Lip blush result" />
             <h3>Lip Blush</h3>
-
             <p class="desc">
-              A sheer wash of color that restores warmth and definition
-              — a your-lips-but-better tint that softens as it heals.
-              Follow-up touch-up included.
+              A sheer wash of color that restores warmth and definition — a
+              your-lips-but-better tint that softens as it heals.
             </p>
-
             <div class="svc-meta">
               <span class="svc-price">$400</span>
-
-              <span class="svc-dur">
-                2 hr 30 min · touch-up incl.
-              </span>
+              <span class="svc-dur">2 hr 30 min · touch-up incl.</span>
             </div>
-
-            <a
-              class="btn btn-ghost btn-sm"
-              data-book
-              href="#"
-            >
-              Book
-            </a>
-
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
           </article>
-
 
           <article class="svc-card" data-service="naturalEyeliner">
-
-            <img
-              class="svc-img"
-              src="assets/card-eyeliner.jpg"
-              alt="Permanent eyeliner before and after"
-            />
-
+            <img class="svc-img" src="assets/card-eyeliner.jpg" alt="Permanent eyeliner before and after" />
             <h3>Natural Eyeliner</h3>
-
             <p class="desc">
-              A soft lash-line enhancement that defines and opens the
-              eyes without looking harsh. Touch-up included for lasting,
-              even color.
+              A soft lash-line enhancement that defines and opens the eyes
+              without looking harsh. Touch-up included.
             </p>
-
             <div class="svc-meta">
               <span class="svc-price">$300</span>
-
-              <span class="svc-dur">
-                2 hr · touch-up incl.
-              </span>
+              <span class="svc-dur">2 hr · touch-up incl.</span>
             </div>
-
-            <a
-              class="btn btn-ghost btn-sm"
-              data-book
-              href="#"
-            >
-              Book
-            </a>
-
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
           </article>
 
+        </div>
+      </div>
+
+
+      <!-- ================= PERMANENT JEWELRY ================= -->
+      <div class="svc-group reveal">
+        <h3 class="svc-group-title">Permanent Jewelry</h3>
+
+        <div class="svc-grid svc-grid-single">
+          <article class="svc-card svc-card-featured" data-service="permanentJewelryFitting">
+            <img class="svc-img" src="assets/gallery-1.jpg" alt="Permanent jewelry fitting" />
+            <h3>Permanent Jewelry Fitting</h3>
+            <p class="desc">
+              Reserve time to choose your chain, charms, and custom fit.
+              Pricing varies based on the jewelry selected and the number of
+              guests attending. Plan for approximately 15 minutes per person.
+            </p>
+            <div class="svc-meta">
+              <span class="svc-price svc-price-variable">Price varies</span>
+              <span class="svc-dur">Approx. 15 min per person</span>
+            </div>
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book a Jewelry Fitting</a>
+          </article>
         </div>
       </div>
 
@@ -903,8 +805,8 @@
           </p>
 
           <img
-            class="flogo"
-            src="assets/logo-pink.svg"
+            class="flogo beauty-lodge-footer-logo"
+            src="assets/logo-beauty-lodge-inverted.png"
             alt="Beauty Lodge by Anna"
           />
 
@@ -1027,7 +929,7 @@
   </footer>
 
 
-  <script src="script.js?v=20260717-3"></script>
+  <script src="script.js?v=20260718-services-build"></script>
 
   <script>
     const year = document.getElementById("yr");

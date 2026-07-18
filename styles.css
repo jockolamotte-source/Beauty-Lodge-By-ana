@@ -1984,3 +1984,138 @@ p { margin: 0 0 1rem; }
     animation: none !important;
   }
 }
+
+
+/* ============================================================
+   BEAUTY LODGE WEBSITE V3.6.7
+   Refined hero typography and simplified call-to-action area.
+   The approved V3.6.6 sparkle treatment remains unchanged.
+   ============================================================ */
+
+.hero-inner {
+  max-width: 76rem;
+  padding-top: 4.6rem;
+  padding-bottom: 5rem;
+}
+
+/* Keep the full tagline on one line on normal desktop screens. */
+.hero .hero-tagline {
+  width: max-content;
+  max-width: none;
+  margin-inline: auto;
+  white-space: nowrap;
+  font-size: clamp(3rem, 6.15vw, 5.85rem);
+  line-height: 0.98;
+  letter-spacing: -0.012em;
+}
+
+.hero .hero-tagline em {
+  display: inline;
+}
+
+/* Shorter, quieter supporting sentence. */
+.hero .lede {
+  max-width: 34rem;
+  margin: 1.2rem auto 1.8rem;
+  font-size: clamp(1rem, 1.55vw, 1.18rem);
+  line-height: 1.65;
+  color: rgba(244, 227, 227, 0.84);
+}
+
+/* One clear primary action plus a restrained secondary text link. */
+.hero-cta-refined {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.7rem;
+  flex-wrap: wrap;
+}
+
+.hero-primary-cta {
+  min-width: 160px;
+  padding-inline: 2rem;
+}
+
+.hero-services-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0;
+  color: rgba(255, 248, 244, 0.9);
+  font-family: var(--sans);
+  font-size: 0.77rem;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(244, 227, 227, 0.42);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    gap 180ms ease;
+}
+
+.hero-services-link:hover,
+.hero-services-link:focus-visible {
+  gap: 0.75rem;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-services-link span {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+@media (max-width: 1050px) {
+  .hero .hero-tagline {
+    font-size: clamp(2.75rem, 6vw, 4.8rem);
+  }
+}
+
+@media (max-width: 820px) {
+  .hero-inner {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+
+  /* Allow a controlled two-line layout only when one line no longer fits. */
+  .hero .hero-tagline {
+    width: auto;
+    max-width: 44rem;
+    white-space: normal;
+    line-height: 1;
+  }
+
+  .hero .hero-tagline em {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-inner {
+    padding-top: 3.3rem;
+    padding-bottom: 3.8rem;
+  }
+
+  .hero .hero-tagline {
+    max-width: 21rem;
+    font-size: clamp(2.55rem, 12vw, 3.45rem);
+    line-height: 0.98;
+  }
+
+  .hero .lede {
+    max-width: 18rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.98rem;
+  }
+
+  .hero-cta-refined {
+    gap: 1rem;
+  }
+
+  .hero-primary-cta {
+    min-width: 148px;
+  }
+}

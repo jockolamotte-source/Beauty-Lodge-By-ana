@@ -1,12 +1,12 @@
 Beauty Lodge Website
-Version: V3.6.6
+Version: V3.6.7
 
-Based on: V3.6.2
+Based on: V3.6.6
 
 Changes:
-- Restored the original plus-sign sparkle treatment.
-- Removed the later lens-flare/halo sparkle experiments.
-- Increased the hero-logo glow during page load.
-- Added a brighter one-time shimmer sweep across the hero logo.
-- Added a subtle continuous hero-logo shimmer after page load.
-- Preserved the V3.6.2 service images and Permanent Jewelry gallery-4 image.
+- Preserved the approved plus-sign sparkles and hero-logo glow.
+- Changed the hero tagline to one line on standard desktop screens.
+- Shortened the supporting copy to reduce clutter.
+- Simplified the call-to-action area to one primary Book Now button
+  and one understated View Services text link.
+- Added responsive wrapping only when the screen becomes too narrow.

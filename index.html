@@ -40,7 +40,49 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles.css?v=20260717-centered-events" />
+  <link rel="stylesheet" href="styles.css?v=20260717-lash-image-fix" />
+
+  <style>
+    /* Lash card image alignment */
+    .svc-card .svc-img {
+      display: block;
+      width: calc(100% + 3.8rem) !important;
+      max-width: none !important;
+      height: 230px !important;
+      margin: -2rem -1.9rem 1.5rem !important;
+      object-fit: cover !important;
+      transform: none !important;
+      transform-origin: center !important;
+    }
+
+    .svc-card[data-service="fullSet"] .svc-img {
+      object-position: 48% 48% !important;
+    }
+
+    .svc-card[data-service="refill"] .svc-img {
+      object-position: 50% 48% !important;
+    }
+
+    .svc-card[data-service="volumeSet"] .svc-img {
+      object-position: 50% 50% !important;
+    }
+
+    .svc-card[data-service="volumeRefill"] .svc-img {
+      object-position: 50% 48% !important;
+    }
+
+    @media (max-width: 1100px) {
+      .svc-card .svc-img {
+        height: 220px !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .svc-card .svc-img {
+        height: 240px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -985,7 +1027,7 @@
   </footer>
 
 
-  <script src="script.js?v=20260717-2"></script>
+  <script src="script.js?v=20260717-3"></script>
 
   <script>
     const year = document.getElementById("yr");

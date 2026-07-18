@@ -2119,3 +2119,234 @@ p { margin: 0 0 1rem; }
     min-width: 148px;
   }
 }
+
+
+/* ============================================================
+   BEAUTY LODGE WEBSITE V3.6.8
+   Clean header wordmark + corrected hero spacing.
+   V3.6.6 sparkles and hero-logo shimmer are unchanged.
+   ============================================================ */
+
+/* ----- Clean text-only header wordmark ----- */
+
+.nav-inner {
+  min-height: 88px;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.brand.brand-wordmark {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0.18rem !important;
+  min-width: 225px !important;
+  width: auto !important;
+  color: var(--burgundy);
+  line-height: 1;
+  text-decoration: none;
+}
+
+.brand-wordmark-name {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.05rem, 2.45vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: 0.004em;
+  line-height: 0.9;
+  white-space: nowrap;
+}
+
+.brand-wordmark-by {
+  display: block;
+  margin-left: 0.14rem;
+  font-family: "Jost", Arial, sans-serif;
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ----- Corrected hero spacing ----- */
+
+.hero-inner {
+  max-width: 78rem;
+  padding-top: 4.8rem;
+  padding-bottom: 5.2rem;
+}
+
+.hero-brand-mark {
+  margin-bottom: 2rem !important;
+}
+
+.hero .hero-tagline {
+  width: max-content;
+  max-width: calc(100vw - 4rem);
+  margin: 0 auto;
+  white-space: nowrap;
+  font-size: clamp(3rem, 5.65vw, 5.35rem);
+  line-height: 1.04;
+  letter-spacing: -0.012em;
+  padding-bottom: 0.22em;
+}
+
+.hero .hero-tagline em {
+  display: inline;
+}
+
+/*
+  The extra top margin prevents the descender on the final "y"
+  from colliding visually with the decorative chain divider.
+*/
+.hero .chain {
+  margin-top: 1.65rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* No supporting paragraph in this version. */
+.hero .lede {
+  display: none !important;
+}
+
+/* One clear primary action and one quieter secondary link. */
+.hero-cta-refined {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem !important;
+  flex-wrap: wrap;
+  margin-top: 0 !important;
+}
+
+.hero-primary-cta {
+  min-width: 158px;
+  padding-inline: 2rem;
+}
+
+.hero-services-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.52rem;
+  padding: 0.7rem 0;
+  color: rgba(255, 248, 244, 0.92);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(244, 227, 227, 0.48);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    gap 180ms ease;
+}
+
+.hero-services-link:hover,
+.hero-services-link:focus-visible {
+  gap: 0.76rem;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-services-link span {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+@media (max-width: 1040px) {
+  .brand.brand-wordmark {
+    min-width: 188px !important;
+  }
+
+  .brand-wordmark-name {
+    font-size: 1.95rem;
+  }
+
+  .hero .hero-tagline {
+    font-size: clamp(2.8rem, 5.7vw, 4.6rem);
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-inner {
+    min-height: 74px;
+  }
+
+  .brand.brand-wordmark {
+    min-width: 0 !important;
+  }
+
+  .brand-wordmark-name {
+    font-size: 1.72rem;
+  }
+
+  .brand-wordmark-by {
+    font-size: 0.56rem;
+    letter-spacing: 0.32em;
+  }
+
+  .hero-inner {
+    padding-top: 4rem;
+    padding-bottom: 4.6rem;
+  }
+
+  .hero-brand-mark {
+    margin-bottom: 1.55rem !important;
+  }
+
+  .hero .hero-tagline {
+    width: auto;
+    max-width: 44rem;
+    white-space: normal;
+    line-height: 1.03;
+    padding-bottom: 0.18em;
+  }
+
+  .hero .hero-tagline em {
+    white-space: nowrap;
+  }
+
+  .hero .chain {
+    margin-top: 1.45rem !important;
+    margin-bottom: 1.7rem !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand-wordmark-name {
+    font-size: 1.5rem;
+  }
+
+  .brand-wordmark-by {
+    font-size: 0.5rem;
+    letter-spacing: 0.29em;
+  }
+
+  .hero-inner {
+    padding-top: 3.25rem;
+    padding-bottom: 3.9rem;
+  }
+
+  .hero-brand-mark {
+    margin-bottom: 1.2rem !important;
+  }
+
+  .hero .hero-tagline {
+    max-width: 21rem;
+    font-size: clamp(2.45rem, 11.5vw, 3.35rem);
+    line-height: 1;
+    padding-bottom: 0.14em;
+  }
+
+  .hero .chain {
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.45rem !important;
+  }
+
+  .hero-cta-refined {
+    gap: 1.1rem !important;
+  }
+}

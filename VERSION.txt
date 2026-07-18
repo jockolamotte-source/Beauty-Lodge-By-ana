@@ -1,12 +1,14 @@
 Beauty Lodge Website
-Version: V3.6.7
+Version: V3.6.8
 
-Based on: V3.6.6
+Based on: V3.6.7
 
 Changes:
-- Preserved the approved plus-sign sparkles and hero-logo glow.
-- Changed the hero tagline to one line on standard desktop screens.
-- Shortened the supporting copy to reduce clutter.
-- Simplified the call-to-action area to one primary Book Now button
-  and one understated View Services text link.
-- Added responsive wrapping only when the screen becomes too narrow.
+- Replaced the old circular badge + typed header treatment on every page.
+- Added the approved clean text-only Beauty Lodge / BY ANNA header.
+- Removed the hero sentence: Personalized beauty services in a calm, private studio.
+- Increased spacing between the hero logo, tagline, divider, and CTA.
+- Added extra clearance below the tagline so the descender on "beauty" does not touch the divider.
+- Simplified the hero actions to Book Now and View Services.
+- Updated Lucy's title to Make Up Artist In-Training.
+- Preserved the approved V3.6.6 plus-sign sparkles and logo shimmer.

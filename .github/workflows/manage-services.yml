@@ -10,6 +10,8 @@ on:
         options:
           - Full Set
           - Refill
+          - Volume Set
+          - Volume Refill
           - Powder Brows
           - Lip Blush
           - Natural Eyeliner
@@ -46,6 +48,8 @@ jobs:
           service_map = {
               "Full Set": "fullSet",
               "Refill": "refill",
+              "Volume Set": "volumeSet",
+              "Volume Refill": "volumeRefill",
               "Powder Brows": "powderBrows",
               "Lip Blush": "lipBlush",
               "Natural Eyeliner": "naturalEyeliner",

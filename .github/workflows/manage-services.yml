@@ -1,0 +1,91 @@
+name: Manage Website Services
+
+on:
+  workflow_dispatch:
+    inputs:
+      service:
+        description: Which service do you want to change?
+        required: true
+        type: choice
+        options:
+          - Full Set
+          - Refill
+          - Powder Brows
+          - Lip Blush
+          - Natural Eyeliner
+      state:
+        description: How should this service appear on the website?
+        required: true
+        type: choice
+        options:
+          - Available
+          - Temporarily unavailable
+          - Hidden
+
+permissions:
+  contents: write
+
+jobs:
+  update-service:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Update service setting
+        env:
+          SELECTED_SERVICE: ${{ inputs.service }}
+          SELECTED_STATE: ${{ inputs.state }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          service_map = {
+              "Full Set": "fullSet",
+              "Refill": "refill",
+              "Powder Brows": "powderBrows",
+              "Lip Blush": "lipBlush",
+              "Natural Eyeliner": "naturalEyeliner",
+          }
+
+          state_map = {
+              "Available": "available",
+              "Temporarily unavailable": "unavailable",
+              "Hidden": "hidden",
+          }
+
+          path = Path("assets/services.json")
+          config = json.loads(path.read_text(encoding="utf-8"))
+
+          service_name = os.environ["SELECTED_SERVICE"]
+          state_name = os.environ["SELECTED_STATE"]
+          service_id = service_map[service_name]
+          new_state = state_map[state_name]
+
+          if service_id not in config:
+              raise SystemExit(f"Unknown service ID: {service_id}")
+
+          config[service_id]["state"] = new_state
+          path.write_text(
+              json.dumps(config, indent=2) + "\n",
+              encoding="utf-8"
+          )
+
+          print(f"Updated {service_name} to {state_name}")
+          PY
+
+      - name: Commit the change
+        run: |
+          if git diff --quiet -- assets/services.json; then
+            echo "No service change was needed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/services.json
+          git commit -m "Update website service availability"
+          git push

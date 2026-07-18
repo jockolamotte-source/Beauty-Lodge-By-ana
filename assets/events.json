@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T17:54:18.201445+00:00",
+  "updatedAt": "2026-07-18T17:56:42.470867+00:00",
   "events": [
     {
       "title": "YLNI Berry Street Farmers Market",
@@ -7,14 +7,6 @@
       "location": "Fort Wayne, IN, USA",
       "start": "2026-08-15T09:00:00-04:00",
       "end": "2026-08-15T13:00:00-04:00",
-      "allDay": false
-    },
-    {
-      "title": "Berne Jewelry Festival",
-      "description": "",
-      "location": "Bern, Switzerland",
-      "start": "2026-08-19T21:00:00-04:00",
-      "end": "2026-08-19T22:00:00-04:00",
       "allDay": false
     }
   ]

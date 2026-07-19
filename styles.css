@@ -2350,3 +2350,101 @@ p { margin: 0 0 1rem; }
     gap: 1.1rem !important;
   }
 }
+
+
+/* ============================================================
+   BEAUTY LODGE WEBSITE V3.6.9
+   Location map and address section
+   ============================================================ */
+
+.location-section {
+  position: relative;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(201, 162, 126, 0.11),
+      transparent 34%
+    ),
+    var(--blush-soft);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.35fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.location-copy {
+  max-width: 30rem;
+}
+
+.location-copy .eyebrow {
+  color: var(--rose-gold-deep, #b0855c);
+}
+
+.location-copy h2 {
+  margin-top: 0.45rem;
+  font-size: clamp(2.35rem, 4.4vw, 4rem);
+  color: var(--burgundy);
+}
+
+.location-copy p:not(.eyebrow) {
+  margin: 1rem 0 1.75rem;
+  color: var(--charcoal);
+  line-height: 1.75;
+}
+
+.location-copy strong {
+  color: var(--burgundy);
+  font-weight: 500;
+}
+
+.location-map {
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid rgba(66, 35, 40, 0.16);
+  border-radius: 1.25rem;
+  background: var(--porcelain, #fbf5f3);
+  box-shadow:
+    0 18px 50px rgba(66, 35, 40, 0.12),
+    0 3px 12px rgba(66, 35, 40, 0.08);
+}
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+  height: 390px;
+  border: 0;
+}
+
+@media (max-width: 820px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-copy {
+    max-width: 38rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .location-map,
+  .location-map iframe {
+    min-height: 340px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 560px) {
+  .location-section {
+    padding: 3.5rem 0;
+  }
+
+  .location-map,
+  .location-map iframe {
+    min-height: 300px;
+    height: 300px;
+  }
+}

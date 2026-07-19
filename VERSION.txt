@@ -1,14 +1,24 @@
 Beauty Lodge Website
-Version: V3.6.8
+Version: V3.6.9
 
-Based on: V3.6.7
+Based on: V3.6.8
 
 Changes:
-- Replaced the old circular badge + typed header treatment on every page.
-- Added the approved clean text-only Beauty Lodge / BY ANNA header.
-- Removed the hero sentence: Personalized beauty services in a calm, private studio.
-- Increased spacing between the hero logo, tagline, divider, and CTA.
-- Added extra clearance below the tagline so the descender on "beauty" does not touch the divider.
-- Simplified the hero actions to Book Now and View Services.
-- Updated Lucy's title to Make Up Artist In-Training.
-- Preserved the approved V3.6.6 plus-sign sparkles and logo shimmer.
+- Updated address to 1059 Wealthy St SE, Grand Rapids, MI 49506.
+- Added a branded Google map and Get Directions button to index.html and team.html.
+- Updated service prices:
+  Natural Full Set $170
+  Natural Refill $70
+  Volume Set $180
+  Volume Refill $80
+  Lash Lift & Tint $100
+  Brow Tint & Tweeze $60
+  Lash Removal $40
+  Powder Brows $500
+  Lip Blush $500
+  Natural Eyeliner $400
+- Removed Lash Bath from the website, services.json, GitHub Action, and assets.
+- Updated the About section and removed the Anna signature.
+- Updated Lucy's title to Make Up Artist in training.
+- Preserved the V3.6.8 header, hero spacing, sparkles, logo shimmer,
+  calendar integration, and service availability controls.

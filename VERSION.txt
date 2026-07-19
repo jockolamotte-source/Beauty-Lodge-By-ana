@@ -1,12 +1,11 @@
 Beauty Lodge Website
-Version: V3.6.10
+Version: V3.6.11
 
-Based on: V3.6.9
+Based on: V3.6.10
 
 Changes:
-- Added a hero announcement pill on the homepage: Grand Opening • September 1
-- Updated footer hours on index.html, team.html, and jewelry.html:
-  Mon–Tue · 10am–6pm
-  Wed · 10am–5pm
-  Thurs–Sun · Closed
-- Preserved the approved header, hero spacing, sparkles, and logo shimmer.
+- Reduced the top padding in the Our Team introduction.
+- Reduced the bottom padding beneath the team introduction.
+- Reduced the space before Anna's profile begins.
+- Added matching tighter spacing for tablet and mobile layouts.
+- All content, pricing, map, hours, header, sparkles, and hero effects remain unchanged.

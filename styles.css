@@ -2448,3 +2448,52 @@ p { margin: 0 0 1rem; }
     height: 300px;
   }
 }
+
+
+/* ============================================================
+   BEAUTY LODGE WEBSITE V3.6.10
+   Grand opening hero announcement + updated hours
+   ============================================================ */
+
+.hero-announcement {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0 auto 1.4rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid rgba(244, 227, 227, 0.44);
+  border-radius: 999px;
+  background: rgba(66, 35, 40, 0.18);
+  backdrop-filter: blur(4px);
+  color: rgba(255, 248, 244, 0.94);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 10px 24px rgba(66, 35, 40, 0.12);
+}
+
+.hero-announcement span {
+  color: rgba(201, 162, 126, 0.92);
+  font-size: 0.9em;
+}
+
+@media (max-width: 860px) {
+  .hero-announcement {
+    margin-bottom: 1.2rem;
+    font-size: 0.71rem;
+    letter-spacing: 0.16em;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-announcement {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+  }
+}

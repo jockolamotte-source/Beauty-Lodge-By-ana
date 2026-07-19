@@ -1,24 +1,12 @@
 Beauty Lodge Website
-Version: V3.6.9
+Version: V3.6.10
 
-Based on: V3.6.8
+Based on: V3.6.9
 
 Changes:
-- Updated address to 1059 Wealthy St SE, Grand Rapids, MI 49506.
-- Added a branded Google map and Get Directions button to index.html and team.html.
-- Updated service prices:
-  Natural Full Set $170
-  Natural Refill $70
-  Volume Set $180
-  Volume Refill $80
-  Lash Lift & Tint $100
-  Brow Tint & Tweeze $60
-  Lash Removal $40
-  Powder Brows $500
-  Lip Blush $500
-  Natural Eyeliner $400
-- Removed Lash Bath from the website, services.json, GitHub Action, and assets.
-- Updated the About section and removed the Anna signature.
-- Updated Lucy's title to Make Up Artist in training.
-- Preserved the V3.6.8 header, hero spacing, sparkles, logo shimmer,
-  calendar integration, and service availability controls.
+- Added a hero announcement pill on the homepage: Grand Opening • September 1
+- Updated footer hours on index.html, team.html, and jewelry.html:
+  Mon–Tue · 10am–6pm
+  Wed · 10am–5pm
+  Thurs–Sun · Closed
+- Preserved the approved header, hero spacing, sparkles, and logo shimmer.

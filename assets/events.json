@@ -1,12 +1,20 @@
 {
-  "updatedAt": "2026-07-20T16:43:18.642173+00:00",
+  "updatedAt": "2026-07-20T18:33:43.491934+00:00",
   "events": [
     {
       "title": "YLNI Berry Street Farmers Market",
       "description": "",
       "location": "Fort Wayne, IN, USA",
-      "start": "2026-08-15T09:00:00-04:00",
-      "end": "2026-08-15T13:00:00-04:00",
+      "start": "2026-08-08T09:00:00-04:00",
+      "end": "2026-08-08T13:00:00-04:00",
+      "allDay": false
+    },
+    {
+      "title": "YLNI Berry Street Farmers Market",
+      "description": "",
+      "location": "Fort Wayne, IN, USA",
+      "start": "2026-09-05T09:00:00-04:00",
+      "end": "2026-09-05T13:00:00-04:00",
       "allDay": false
     }
   ]

@@ -1,20 +1,13 @@
 Beauty Lodge Website
-Version: V3.6.12
+Version: V3.6.13
 
-Based on: V3.6.11
+Based on: V3.6.12
 
 Changes:
-- Added a branded Walnex Creative promotional section above the footer on:
-  index.html
-  team.html
-  jewelry.html
-- Added the message:
-  Want a website like this?
-  Thoughtful branding and websites for startups and small businesses,
-  crafted by Walnex Creative.
-- Added a Meet Walnex Creative CTA linking to:
-  https://www.walnexcreative.com
-- Added a subtle Website crafted by Walnex Creative credit to each footer.
-- Preserved the approved Beauty Lodge content, pricing, map, hours,
-  header, hero spacing, sparkles, logo shimmer, team spacing,
-  GitHub Actions, scripts, and assets.
+- Centered the footer tagline above the Beauty Lodge logo.
+- Centered the Beauty Lodge footer logo within its column.
+- Changed Lash & Brow Enhancements to a centered three-card layout.
+- Added centered responsive layouts for tablet and mobile screens.
+- Preserved the Walnex Creative promotion, pricing, map, hours,
+  header, hero, sparkles, logo shimmer, team content, scripts,
+  assets, and GitHub workflows.

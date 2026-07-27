@@ -27,10 +27,6 @@
     "name": "Lash Removal",
     "state": "available"
   },
-  "lashBath": {
-    "name": "Lash Bath",
-    "state": "available"
-  },
   "powderBrows": {
     "name": "Powder Brows",
     "state": "hidden"

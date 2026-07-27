@@ -15,7 +15,6 @@ on:
           - Lash Lift & Tint
           - Brow Tint & Tweeze
           - Lash Removal
-          - Lash Bath
           - Powder Brows
           - Lip Blush
           - Natural Eyeliner
@@ -58,7 +57,6 @@ jobs:
               "Lash Lift & Tint": "lashLiftTint",
               "Brow Tint & Tweeze": "browTintTweeze",
               "Lash Removal": "lashRemoval",
-              "Lash Bath": "lashBath",
               "Powder Brows": "powderBrows",
               "Lip Blush": "lipBlush",
               "Natural Eyeliner": "naturalEyeliner",

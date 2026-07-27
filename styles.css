@@ -2497,3 +2497,211 @@ p { margin: 0 0 1rem; }
     letter-spacing: 0.14em;
   }
 }
+
+
+/* ============================================================
+   BEAUTY LODGE WEBSITE V3.6.12
+   Walnex Creative pre-footer promotion and site credit
+   ============================================================ */
+
+.walnex-promo {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(2.4rem, 5vw, 4rem);
+  color: var(--blush);
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(201, 162, 126, 0.18),
+      transparent 31%
+    ),
+    linear-gradient(
+      115deg,
+      var(--burgundy) 0%,
+      #321b20 62%,
+      var(--ink) 100%
+    );
+  border-top: 1px solid rgba(244, 227, 227, 0.12);
+  border-bottom: 1px solid rgba(244, 227, 227, 0.12);
+}
+
+.walnex-promo::before,
+.walnex-promo::after {
+  content: "";
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid rgba(201, 162, 126, 0.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.walnex-promo::before {
+  top: -7rem;
+  left: -3rem;
+}
+
+.walnex-promo::after {
+  right: -4rem;
+  bottom: -8rem;
+}
+
+.walnex-promo-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.walnex-promo-copy {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 3vw, 2rem);
+  max-width: 47rem;
+}
+
+.walnex-promo-brand {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border: 1px solid rgba(201, 162, 126, 0.72);
+  border-radius: 50%;
+  color: var(--rosegold);
+  box-shadow:
+    inset 0 0 0 5px rgba(201, 162, 126, 0.05),
+    0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.walnex-promo-brand span {
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.walnex-promo-eyebrow {
+  margin: 0 0 0.45rem;
+  color: var(--rosegold);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.27em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.walnex-promo h2 {
+  margin: 0;
+  color: var(--blush);
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1;
+}
+
+.walnex-promo-copy > div:last-child > p:last-child {
+  max-width: 39rem;
+  margin: 0.75rem 0 0;
+  color: rgba(244, 227, 227, 0.74);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.walnex-promo-cta {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  min-height: 3.25rem;
+  padding: 0.9rem 1.35rem;
+  border: 1px solid rgba(201, 162, 126, 0.7);
+  border-radius: 999px;
+  color: var(--blush);
+  background: rgba(244, 227, 227, 0.04);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.walnex-promo-cta svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  transition: transform 180ms ease;
+}
+
+.walnex-promo-cta:hover,
+.walnex-promo-cta:focus-visible {
+  color: var(--ink);
+  background: var(--rosegold);
+  border-color: var(--rosegold);
+  transform: translateY(-2px);
+}
+
+.walnex-promo-cta:hover svg,
+.walnex-promo-cta:focus-visible svg {
+  transform: translateX(3px);
+}
+
+.footer-bottom .walnex-footer-credit {
+  flex-basis: 100%;
+  padding-top: 0.15rem;
+  text-align: center;
+}
+
+.footer-bottom .walnex-footer-credit a {
+  color: rgba(201, 162, 126, 0.88);
+  font-size: inherit;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.footer-bottom .walnex-footer-credit a:hover,
+.footer-bottom .walnex-footer-credit a:focus-visible {
+  color: var(--rosegold);
+}
+
+@media (max-width: 820px) {
+  .walnex-promo-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .walnex-promo-cta {
+    margin-left: calc(4.2rem + clamp(1.2rem, 3vw, 2rem));
+  }
+}
+
+@media (max-width: 600px) {
+  .walnex-promo {
+    text-align: center;
+  }
+
+  .walnex-promo-inner,
+  .walnex-promo-copy {
+    align-items: center;
+  }
+
+  .walnex-promo-copy {
+    flex-direction: column;
+  }
+
+  .walnex-promo-brand {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .walnex-promo-cta {
+    width: 100%;
+    margin-left: 0;
+  }
+}

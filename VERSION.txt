@@ -1,11 +1,13 @@
 Beauty Lodge Website
-Version: V3.6.16
+Version: V3.6.17
 
-Based on: V3.6.15
+Based on: V3.6.16
 
 Changes:
-- Refined the interactive Lash Style Finder sizing so the experience fits more cleanly without feeling cut off.
-- Reduced overall panel height and spacing on desktop.
-- Tightened typography, image sizing, and detail card spacing.
-- Adjusted tablet/mobile breakpoints so the result panel stacks sooner and uses a shorter image ratio.
-- Kept the same lash finder content, interactions, analytics events, and existing site features.
+- Replaced the simple Grand Opening pill with a more refined two-line
+  hero announcement.
+- Added a small uppercase Grand Opening label and larger italic
+  September 1 date.
+- Added tapered divider lines, rose-gold diamond accents, and a subtle glow.
+- Preserved the hero logo, tagline, sparkles, shimmer, lash finder,
+  contact form, hours, pricing, map, Walnex promotion, and all site features.

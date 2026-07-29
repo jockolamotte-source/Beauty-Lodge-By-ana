@@ -3712,3 +3712,155 @@ p { margin: 0 0 1rem; }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ============================================================
+   BEAUTY LODGE WEBSITE V3.6.17
+   Refined Grand Opening hero announcement
+   ============================================================ */
+
+.hero-opening-lockup {
+  display: grid;
+  grid-template-columns: minmax(2.5rem, 5rem) auto minmax(2.5rem, 5rem);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.8rem, 2vw, 1.35rem);
+  width: min(100%, 31rem);
+  margin: 0 auto 1.55rem;
+  color: var(--blush);
+}
+
+.hero-opening-rule {
+  position: relative;
+  display: block;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(244, 227, 227, 0.62)
+  );
+}
+
+.hero-opening-rule:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(244, 227, 227, 0.62),
+    transparent
+  );
+}
+
+.hero-opening-rule::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.18rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border: 1px solid rgba(201, 162, 126, 0.9);
+  transform: translateY(-50%) rotate(45deg);
+  background: rgba(66, 35, 40, 0.72);
+  box-shadow: 0 0 8px rgba(244, 227, 227, 0.22);
+}
+
+.hero-opening-rule:last-child::after {
+  right: auto;
+  left: -0.18rem;
+}
+
+.hero-opening-copy {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  min-width: 10.5rem;
+  padding: 0.45rem 0.6rem 0.55rem;
+}
+
+.hero-opening-copy::before {
+  content: "";
+  position: absolute;
+  inset: -0.25rem -0.7rem;
+  z-index: -1;
+  border-radius: 999px;
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(244, 227, 227, 0.11),
+      transparent 68%
+    );
+  filter: blur(2px);
+}
+
+.hero-opening-label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(244, 227, 227, 0.78);
+}
+
+.hero-opening-date {
+  position: relative;
+  font-family: var(--display);
+  font-size: clamp(1.65rem, 3.2vw, 2.45rem);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: rgba(255, 248, 244, 0.98);
+  text-shadow:
+    0 0 10px rgba(244, 227, 227, 0.14),
+    0 0 22px rgba(201, 162, 126, 0.1);
+}
+
+.hero-opening-date::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.45rem;
+  width: 1.4rem;
+  height: 1px;
+  transform: translateX(-50%);
+  background: rgba(201, 162, 126, 0.72);
+}
+
+@media (max-width: 720px) {
+  .hero-opening-lockup {
+    grid-template-columns: minmax(1.8rem, 3rem) auto minmax(1.8rem, 3rem);
+    gap: 0.75rem;
+    width: min(100%, 23rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-opening-copy {
+    min-width: 9rem;
+  }
+
+  .hero-opening-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.28em;
+  }
+
+  .hero-opening-date {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+}
+
+@media (max-width: 440px) {
+  .hero-opening-lockup {
+    grid-template-columns: 2rem auto 2rem;
+    gap: 0.55rem;
+  }
+
+  .hero-opening-copy {
+    min-width: 8rem;
+    padding-inline: 0.25rem;
+  }
+
+  .hero-opening-label {
+    font-size: 0.54rem;
+    letter-spacing: 0.23em;
+  }
+}

@@ -1,22 +1,11 @@
 Beauty Lodge Website
-Version: V3.6.15
+Version: V3.6.16
 
-Based on: V3.6.14
+Based on: V3.6.15
 
 Changes:
-- Added an interactive Find Your Lash Style comparison tool beneath
-  the primary lash services.
-- Added three selectable looks:
-  Lifted & effortless — Lash Lift & Tint
-  Natural & defined — Natural Full Set
-  Full & dramatic — Volume Set
-- The recommendation panel dynamically updates the service image,
-  description, maintenance, duration, price, and booking label.
-- Added keyboard navigation, ARIA tab behavior, responsive layouts,
-  reduced-motion support, and subtle transition effects.
-- Added GA4 interaction events:
-  lash_style_select
-  lash_comparison_book_click
-- Preserved the contact form, revised hours, phone removal, pricing,
-  maps, service availability controls, Walnex Creative section,
-  hero effects, assets, scripts, and GitHub workflows.
+- Refined the interactive Lash Style Finder sizing so the experience fits more cleanly without feeling cut off.
+- Reduced overall panel height and spacing on desktop.
+- Tightened typography, image sizing, and detail card spacing.
+- Adjusted tablet/mobile breakpoints so the result panel stacks sooner and uses a shorter image ratio.
+- Kept the same lash finder content, interactions, analytics events, and existing site features.

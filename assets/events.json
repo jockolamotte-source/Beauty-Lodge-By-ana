@@ -1,6 +1,14 @@
 {
-  "updatedAt": "2026-07-29T00:57:10.534171+00:00",
+  "updatedAt": "2026-07-29T02:50:33.255529+00:00",
   "events": [
+    {
+      "title": "Grandville Summer Street Fair",
+      "description": "",
+      "location": "Grandville, MI, USA",
+      "start": "2026-08-07T16:00:00-04:00",
+      "end": "2026-08-07T22:00:00-04:00",
+      "allDay": false
+    },
     {
       "title": "YLNI Berry Street Farmers Market",
       "description": "",

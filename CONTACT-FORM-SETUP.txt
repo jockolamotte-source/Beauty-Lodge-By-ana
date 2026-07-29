@@ -1,0 +1,21 @@
+Beauty Lodge Contact Form Setup
+
+The form on contact.html submits to:
+beautylodgebyanna@gmail.com
+
+It uses FormSubmit so this static website can send completed forms by email
+without a custom web server.
+
+IMPORTANT FIRST-TIME ACTIVATION:
+1. Publish the website.
+2. Open contact.html through the live website.
+3. Submit one test message.
+4. FormSubmit will send a confirmation email to beautylodgebyanna@gmail.com.
+5. Open that email and approve/activate the form.
+6. Submit a second test message and confirm it arrives correctly.
+
+After activation, new contact form submissions will be emailed to the
+Beauty Lodge inbox.
+
+The success redirect is:
+https://www.beautylodgebyanna.com/contact-success.html

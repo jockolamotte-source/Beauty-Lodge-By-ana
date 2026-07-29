@@ -1,13 +1,21 @@
 Beauty Lodge Website
-Version: V3.6.13
+Version: V3.6.14
 
-Based on: V3.6.12
+Based on: V3.6.13
 
 Changes:
-- Centered the footer tagline above the Beauty Lodge logo.
-- Centered the Beauty Lodge footer logo within its column.
-- Changed Lash & Brow Enhancements to a centered three-card layout.
-- Added centered responsive layouts for tablet and mobile screens.
-- Preserved the Walnex Creative promotion, pricing, map, hours,
-  header, hero, sparkles, logo shimmer, team content, scripts,
-  assets, and GitHub workflows.
+- Updated business hours across the website:
+  Tuesday–Wednesday · 9am–6pm
+  Thursday · 9am–5pm
+  Monday and Friday–Sunday · Closed
+- Removed the public phone number from all website pages.
+- Replaced the public email/phone footer rows with a Contact Us button.
+- Changed every navigation Contact link to contact.html.
+- Added contact.html with a branded inquiry form.
+- Form submissions are emailed to beautylodgebyanna@gmail.com through
+  FormSubmit.
+- Added contact-success.html as the custom confirmation page.
+- Added contact form spam protection, required-field validation,
+  reply email collection, and a custom email subject/template.
+- Preserved pricing, service controls, maps, team updates, hero effects,
+  Walnex Creative promotion, assets, scripts, and GitHub workflows.

@@ -324,6 +324,174 @@ async function loadServiceAvailability() {
 }
 
 
+
+
+/* ============================================================
+   LASH STYLE FINDER
+   ============================================================ */
+
+const LASH_STYLE_OPTIONS = {
+  lift: {
+    tabId: "lash-choice-lift",
+    title: "Lash Lift & Tint",
+    image: "assets/service-lash-lift-tint.jpeg",
+    imageAlt: "Lash Lift and Tint result",
+    description:
+      "A low-maintenance enhancement that lifts, curls, and deepens your natural lashes without adding extensions.",
+    look: "Lifted and effortless",
+    maintenance: "Typically lasts 6–8 weeks",
+    duration: "1 hr 15 min",
+    price: "$100"
+  },
+  natural: {
+    tabId: "lash-choice-natural",
+    title: "Natural Full Set",
+    image: "assets/card-fullset.jpg",
+    imageAlt: "Natural Full Set lash result",
+    description:
+      "A soft, polished extension look that adds length and definition without appearing overly dramatic.",
+    look: "Natural and defined",
+    maintenance: "Refill every 2–3 weeks",
+    duration: "1 hr 45 min",
+    price: "$170"
+  },
+  volume: {
+    tabId: "lash-choice-volume",
+    title: "Volume Set",
+    image: "assets/card-volume.jpg",
+    imageAlt: "Volume Set lash result",
+    description:
+      "A fuller, more noticeable extension look created with lightweight volume fans and customized density.",
+    look: "Full and dramatic",
+    maintenance: "Refill every 2–3 weeks",
+    duration: "2 hr",
+    price: "$180"
+  }
+};
+
+function trackLashFinderEvent(eventName, styleKey) {
+  const option = LASH_STYLE_OPTIONS[styleKey];
+  if (!option) return;
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, {
+      lash_style: styleKey,
+      recommended_service: option.title
+    });
+  }
+}
+
+function initLashStyleFinder() {
+  const finder = document.querySelector(".lash-finder");
+  if (!finder) return;
+
+  const tabs = [...finder.querySelectorAll("[data-lash-style]")];
+  const result = finder.querySelector("#lash-finder-result");
+  const resultImage = finder.querySelector("[data-lash-result-image]");
+  const resultTitle = finder.querySelector("[data-lash-result-title]");
+  const resultDescription = finder.querySelector(
+    "[data-lash-result-description]"
+  );
+  const resultLook = finder.querySelector("[data-lash-result-look]");
+  const resultMaintenance = finder.querySelector(
+    "[data-lash-result-maintenance]"
+  );
+  const resultDuration = finder.querySelector(
+    "[data-lash-result-duration]"
+  );
+  const resultPrice = finder.querySelector("[data-lash-result-price]");
+  const resultBook = finder.querySelector("[data-lash-result-book]");
+
+  if (
+    !tabs.length ||
+    !result ||
+    !resultImage ||
+    !resultTitle ||
+    !resultDescription ||
+    !resultLook ||
+    !resultMaintenance ||
+    !resultDuration ||
+    !resultPrice ||
+    !resultBook
+  ) {
+    return;
+  }
+
+  let activeStyle = "natural";
+
+  function renderStyle(styleKey, shouldTrack = true) {
+    const option = LASH_STYLE_OPTIONS[styleKey];
+    if (!option || styleKey === activeStyle && shouldTrack) {
+      return;
+    }
+
+    activeStyle = styleKey;
+    result.classList.add("is-updating");
+
+    window.setTimeout(() => {
+      tabs.forEach((tab) => {
+        const selected = tab.dataset.lashStyle === styleKey;
+        tab.classList.toggle("is-active", selected);
+        tab.setAttribute("aria-selected", selected ? "true" : "false");
+        tab.setAttribute("tabindex", selected ? "0" : "-1");
+      });
+
+      result.setAttribute("aria-labelledby", option.tabId);
+      resultImage.src = option.image;
+      resultImage.alt = option.imageAlt;
+      resultTitle.textContent = option.title;
+      resultDescription.textContent = option.description;
+      resultLook.textContent = option.look;
+      resultMaintenance.textContent = option.maintenance;
+      resultDuration.textContent = option.duration;
+      resultPrice.textContent = option.price;
+      resultBook.dataset.bookService = option.title;
+      resultBook.setAttribute(
+        "aria-label",
+        `Book ${option.title} with Beauty Lodge by Anna`
+      );
+
+      result.classList.remove("is-updating");
+
+      if (shouldTrack) {
+        trackLashFinderEvent("lash_style_select", styleKey);
+      }
+    }, 120);
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      renderStyle(tab.dataset.lashStyle);
+    });
+
+    tab.addEventListener("keydown", (event) => {
+      if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(
+        event.key
+      )) {
+        return;
+      }
+
+      event.preventDefault();
+
+      const direction =
+        event.key === "ArrowRight" || event.key === "ArrowDown"
+          ? 1
+          : -1;
+
+      const nextIndex = (index + direction + tabs.length) % tabs.length;
+      const nextTab = tabs[nextIndex];
+
+      nextTab.focus();
+      renderStyle(nextTab.dataset.lashStyle);
+    });
+  });
+
+  resultBook.addEventListener("click", () => {
+    trackLashFinderEvent("lash_comparison_book_click", activeStyle);
+  });
+}
+
+
 document.addEventListener("DOMContentLoaded", async () => {
   await loadServiceAvailability();
 
@@ -334,6 +502,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     el.setAttribute("href", SETMORE_URL);
     el.setAttribute("rel", "noopener");
   });
+
+  initLashStyleFinder();
 
   if (!document.getElementById("anywhere_book_now_script")) {
     const script = document.createElement("script");

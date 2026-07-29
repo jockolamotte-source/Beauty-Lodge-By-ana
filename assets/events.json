@@ -1,29 +1,4 @@
 {
-  "updatedAt": "2026-07-29T19:39:04.463838+00:00",
-  "events": [
-    {
-      "title": "Grandville Summer Street Fair",
-      "description": "",
-      "location": "Grandville, MI, USA",
-      "start": "2026-08-07T16:00:00-04:00",
-      "end": "2026-08-07T22:00:00-04:00",
-      "allDay": false
-    },
-    {
-      "title": "YLNI Berry Street Farmers Market",
-      "description": "",
-      "location": "Fort Wayne, IN, USA",
-      "start": "2026-08-08T09:00:00-04:00",
-      "end": "2026-08-08T13:00:00-04:00",
-      "allDay": false
-    },
-    {
-      "title": "YLNI Berry Street Farmers Market",
-      "description": "",
-      "location": "Fort Wayne, IN, USA",
-      "start": "2026-09-05T09:00:00-04:00",
-      "end": "2026-09-05T13:00:00-04:00",
-      "allDay": false
-    }
-  ]
+  "updatedAt": null,
+  "events": []
 }

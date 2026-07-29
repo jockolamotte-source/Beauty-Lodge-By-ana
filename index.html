@@ -40,7 +40,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles.css?v=3.6.14" />
+  <link rel="stylesheet" href="styles.css?v=3.6.15" />
 </head>
 
 <body>
@@ -320,6 +320,218 @@
 
         </div>
       </div>
+
+
+      <!-- ================= LASH STYLE FINDER ================= -->
+      <section
+        class="lash-finder reveal"
+        aria-labelledby="lash-finder-title"
+      >
+        <div class="lash-finder-heading">
+          <p class="eyebrow">Find Your Lash Style</p>
+
+          <h3 id="lash-finder-title">
+            How do you want your lashes to feel?
+          </h3>
+
+          <p>
+            Choose the result that sounds most like you. We’ll show the
+            service, maintenance, timing, and price that best match it.
+          </p>
+        </div>
+
+        <div
+          class="lash-choice-grid"
+          role="tablist"
+          aria-label="Choose a lash style"
+        >
+          <button
+            class="lash-choice"
+            id="lash-choice-lift"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="lash-finder-result"
+            tabindex="-1"
+            data-lash-style="lift"
+          >
+            <span class="lash-choice-image">
+              <img
+                src="assets/service-lash-lift-tint.jpeg"
+                alt=""
+                loading="lazy"
+              />
+            </span>
+
+            <span class="lash-choice-copy">
+              <strong>Lifted &amp; effortless</strong>
+              <small>Your natural lashes, enhanced</small>
+            </span>
+
+            <span class="lash-choice-check" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 12 4 4 8-9" />
+              </svg>
+            </span>
+          </button>
+
+          <button
+            class="lash-choice is-active"
+            id="lash-choice-natural"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="lash-finder-result"
+            tabindex="0"
+            data-lash-style="natural"
+          >
+            <span class="lash-choice-image">
+              <img
+                src="assets/card-fullset.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </span>
+
+            <span class="lash-choice-copy">
+              <strong>Natural &amp; defined</strong>
+              <small>Soft length with polished definition</small>
+            </span>
+
+            <span class="lash-choice-check" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 12 4 4 8-9" />
+              </svg>
+            </span>
+          </button>
+
+          <button
+            class="lash-choice"
+            id="lash-choice-volume"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="lash-finder-result"
+            tabindex="-1"
+            data-lash-style="volume"
+          >
+            <span class="lash-choice-image">
+              <img
+                src="assets/card-volume.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </span>
+
+            <span class="lash-choice-copy">
+              <strong>Full &amp; dramatic</strong>
+              <small>More density and noticeable impact</small>
+            </span>
+
+            <span class="lash-choice-check" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 12 4 4 8-9" />
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <div
+          class="lash-finder-result"
+          id="lash-finder-result"
+          role="tabpanel"
+          aria-labelledby="lash-choice-natural"
+          aria-live="polite"
+        >
+          <figure class="lash-result-photo">
+            <img
+              data-lash-result-image
+              src="assets/card-fullset.jpg"
+              alt="Natural Full Set lash result"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="lash-result-copy">
+            <p class="lash-result-kicker" data-lash-result-kicker>
+              Your best match
+            </p>
+
+            <h4 data-lash-result-title>Natural Full Set</h4>
+
+            <p class="lash-result-description" data-lash-result-description>
+              A soft, polished extension look that adds length and definition
+              without appearing overly dramatic.
+            </p>
+
+            <dl class="lash-result-details">
+              <div>
+                <dt>Look</dt>
+                <dd data-lash-result-look>Natural and defined</dd>
+              </div>
+
+              <div>
+                <dt>Maintenance</dt>
+                <dd data-lash-result-maintenance>
+                  Refill every 2–3 weeks
+                </dd>
+              </div>
+
+              <div>
+                <dt>Appointment</dt>
+                <dd data-lash-result-duration>1 hr 45 min</dd>
+              </div>
+
+              <div>
+                <dt>Price</dt>
+                <dd data-lash-result-price>$170</dd>
+              </div>
+            </dl>
+
+            <div class="lash-result-actions">
+              <a
+                class="btn btn-primary"
+                data-book
+                data-lash-result-book
+                data-book-service="Natural Full Set"
+                href="#"
+              >
+                Book This Look
+              </a>
+
+              <a
+                class="lash-result-services-link"
+                href="#services"
+              >
+                View all services
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
 
       <!-- ================= LASH & BROW ENHANCEMENTS ================= -->
@@ -1022,7 +1234,7 @@
   </footer>
 
 
-  <script src="script.js?v=20260718-sparkle-logo"></script>
+  <script src="script.js?v=3.6.15"></script>
 
   <script>
     const year = document.getElementById("yr");

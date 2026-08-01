@@ -14,6 +14,184 @@ const EVENTS_JSON_URL = "assets/events.json";
 const MAX_POPUP_EVENTS = 6;
 const CALENDAR_REFRESH_MINUTES = 15;
 
+function getPageName() {
+  const path = window.location.pathname.split("/").pop() || "index.html";
+
+  if (path === "index.html") return "home";
+
+  return path.replace(/\.html$/i, "") || "home";
+}
+
+function getButtonLocation(element) {
+  const locationSelectors = [
+    [".nav", "navigation"],
+    [".hero", "hero"],
+    [".svc-card", "service_card"],
+    [".lash-finder", "lash_finder"],
+    [".teaser", "jewelry_teaser"],
+    [".jcta", "jewelry_cta"],
+    [".events", "events"],
+    [".team-cta", "team_cta"],
+    [".team-member", "team_profile"],
+    [".location-section", "location"],
+    [".contact-page", "contact_page"],
+    [".footer", "footer"],
+    [".walnex-promo", "walnex_promo"]
+  ];
+
+  const match = locationSelectors.find(([selector]) =>
+    element.closest(selector)
+  );
+
+  return match ? match[1] : "page";
+}
+
+function getServiceName(element) {
+  if (element.dataset.bookService) return element.dataset.bookService;
+
+  const serviceCard = element.closest(".svc-card[data-service]");
+  if (serviceCard) {
+    const heading = serviceCard.querySelector("h3");
+    if (heading) return heading.textContent.trim();
+    return serviceCard.dataset.service || "";
+  }
+
+  const teamMember = element.closest(".team-member");
+  if (teamMember) {
+    const heading = teamMember.querySelector("h2");
+    if (heading) return `Book with ${heading.textContent.trim()}`;
+  }
+
+  return "";
+}
+
+function getLinkDestination(element) {
+  return (
+    element.getAttribute("href") ||
+    element.dataset.bookingUrl ||
+    element.action ||
+    ""
+  );
+}
+
+function trackBeautyLodgeEvent(eventName, parameters = {}) {
+  const eventData = {
+    event: eventName,
+    page_name: getPageName(),
+    page_path: window.location.pathname,
+    ...parameters
+  };
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(eventData);
+}
+
+function trackBookingClick(element, extraParameters = {}) {
+  const serviceName = getServiceName(element);
+  const buttonLocation = getButtonLocation(element);
+  const destination = getLinkDestination(element) || SETMORE_URL;
+
+  const parameters = {
+    button_location: buttonLocation,
+    destination,
+    link_text: element.textContent.trim(),
+    ...extraParameters
+  };
+
+  if (serviceName) {
+    parameters.service_name = serviceName;
+  }
+
+  trackBeautyLodgeEvent("book_now_click", parameters);
+
+  if (serviceName) {
+    trackBeautyLodgeEvent("service_book_click", parameters);
+  }
+}
+
+function initAnalyticsTracking() {
+  document.addEventListener("click", (event) => {
+    const bookButton = event.target.closest("[data-book]");
+    if (bookButton) {
+      trackBookingClick(bookButton);
+      return;
+    }
+
+    const instagramLink = event.target.closest("[data-ig]");
+    if (instagramLink) {
+      trackBeautyLodgeEvent("instagram_click", {
+        button_location: getButtonLocation(instagramLink),
+        destination: getLinkDestination(instagramLink) || INSTAGRAM_URL,
+        link_text: instagramLink.textContent.trim() || "Instagram"
+      });
+      return;
+    }
+
+    const phoneLink = event.target.closest('a[href^="tel:"]');
+    if (phoneLink) {
+      trackBeautyLodgeEvent("phone_click", {
+        button_location: getButtonLocation(phoneLink),
+        destination: getLinkDestination(phoneLink),
+        link_text: phoneLink.textContent.trim()
+      });
+      return;
+    }
+
+    const emailLink = event.target.closest('a[href^="mailto:"]');
+    if (emailLink) {
+      trackBeautyLodgeEvent("email_click", {
+        button_location: getButtonLocation(emailLink),
+        destination: getLinkDestination(emailLink),
+        link_text: emailLink.textContent.trim()
+      });
+      return;
+    }
+
+    const directionsLink = event.target.closest(
+      'a[href*="google.com/maps/dir"]'
+    );
+    if (directionsLink) {
+      trackBeautyLodgeEvent("directions_click", {
+        button_location: getButtonLocation(directionsLink),
+        destination: getLinkDestination(directionsLink),
+        link_text: directionsLink.textContent.trim()
+      });
+      return;
+    }
+
+    const serviceCard = event.target.closest(".svc-card[data-service]");
+    if (serviceCard) {
+      const heading = serviceCard.querySelector("h3");
+
+      trackBeautyLodgeEvent("service_click", {
+        button_location: getButtonLocation(serviceCard),
+        service_id: serviceCard.dataset.service,
+        service_name: heading
+          ? heading.textContent.trim()
+          : serviceCard.dataset.service
+      });
+    }
+  });
+
+  document.addEventListener("submit", (event) => {
+    const form = event.target.closest(".contact-form");
+    if (!form) return;
+
+    const service = form.querySelector('[name="service"]')?.value || "";
+
+    window.sessionStorage.setItem(
+      "beautyLodgeContactSubmitPending",
+      "true"
+    );
+
+    trackBeautyLodgeEvent("contact_form_submit", {
+      button_location: getButtonLocation(form),
+      destination: form.action,
+      service_name: service || undefined
+    });
+  });
+}
+
 function escapeEventText(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -373,12 +551,12 @@ function trackLashFinderEvent(eventName, styleKey) {
   const option = LASH_STYLE_OPTIONS[styleKey];
   if (!option) return;
 
-  if (typeof window.gtag === "function") {
-    window.gtag("event", eventName, {
-      lash_style: styleKey,
-      recommended_service: option.title
-    });
-  }
+  trackBeautyLodgeEvent(eventName, {
+    button_location: "lash_finder",
+    lash_style: styleKey,
+    service_name: option.title,
+    recommended_service: option.title
+  });
 }
 
 function initLashStyleFinder() {
@@ -518,6 +696,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener");
   });
+
+  initAnalyticsTracking();
+
+  if (
+    getPageName() === "contact-success" &&
+    window.sessionStorage.getItem("beautyLodgeContactSubmitPending")
+  ) {
+    window.sessionStorage.removeItem("beautyLodgeContactSubmitPending");
+
+    trackBeautyLodgeEvent("contact_form_submit", {
+      button_location: "contact_success",
+      form_status: "success"
+    });
+  }
 
   const toggle = document.querySelector(".nav-toggle");
   const links = document.querySelector(".nav-links");

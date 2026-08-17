@@ -531,7 +531,7 @@ const LASH_STYLE_OPTIONS = {
     look: "Natural and defined",
     maintenance: "Refill every 2–3 weeks",
     duration: "1 hr 45 min",
-    price: "$170"
+    price: "$140"
   },
   volume: {
     tabId: "lash-choice-volume",
@@ -543,7 +543,7 @@ const LASH_STYLE_OPTIONS = {
     look: "Full and dramatic",
     maintenance: "Refill every 2–3 weeks",
     duration: "2 hr",
-    price: "$180"
+    price: "$155"
   }
 };
 

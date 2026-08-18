@@ -3863,4 +3863,15 @@ p { margin: 0 0 1rem; }
     font-size: 0.54rem;
     letter-spacing: 0.23em;
   }
+   
+}
+/* Center final two lash cards when the 4-column layout is active */
+@media (min-width: 1000px) {
+  .svc-group-four .svc-grid > .svc-card:nth-last-child(2) {
+    grid-column: 2;
+  }
+
+  .svc-group-four .svc-grid > .svc-card:last-child {
+    grid-column: 3;
+  }
 }

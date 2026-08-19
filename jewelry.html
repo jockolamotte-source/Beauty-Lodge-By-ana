@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3.7.0" />
+  <link rel="stylesheet" href="styles.css?v=3.7.1" />
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRRG2G3N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -111,19 +111,19 @@
           <div class="jewelry-finder-steps">
             <fieldset class="jewelry-choice-group" data-jewelry-group="placement">
               <legend><span>01</span> Where would you wear it?</legend>
-              <div class="jewelry-choice-row">
-                <button type="button" class="jewelry-choice is-active" data-value="Bracelet" aria-pressed="true">Bracelet</button>
-                <button type="button" class="jewelry-choice" data-value="Anklet" aria-pressed="false">Anklet</button>
-                <button type="button" class="jewelry-choice" data-value="Necklace" aria-pressed="false">Necklace</button>
+              <div class="jewelry-choice-row jewelry-choice-row-visual">
+                <button type="button" class="jewelry-choice jewelry-choice-visual is-active" data-value="Bracelet" aria-pressed="true"><img src="assets/gallery-1.jpg" alt="Bracelet permanent jewelry inspiration"><span>Bracelet</span></button>
+                <button type="button" class="jewelry-choice jewelry-choice-visual" data-value="Anklet" aria-pressed="false"><img src="assets/gallery-6.jpg" alt="Anklet permanent jewelry inspiration"><span>Anklet</span></button>
+                <button type="button" class="jewelry-choice jewelry-choice-visual" data-value="Necklace" aria-pressed="false"><img src="assets/gallery-5.jpg" alt="Necklace permanent jewelry inspiration"><span>Necklace</span></button>
               </div>
             </fieldset>
 
             <fieldset class="jewelry-choice-group" data-jewelry-group="style">
               <legend><span>02</span> Pick your vibe</legend>
-              <div class="jewelry-choice-row">
-                <button type="button" class="jewelry-choice is-active" data-value="Delicate" aria-pressed="true">Delicate</button>
-                <button type="button" class="jewelry-choice" data-value="Classic" aria-pressed="false">Classic</button>
-                <button type="button" class="jewelry-choice" data-value="Statement" aria-pressed="false">Statement</button>
+              <div class="jewelry-choice-row jewelry-choice-row-visual">
+                <button type="button" class="jewelry-choice jewelry-choice-visual is-active" data-value="Delicate" aria-pressed="true"><img src="assets/gallery-1.jpg" alt="Delicate permanent jewelry style"><span>Delicate</span></button>
+                <button type="button" class="jewelry-choice jewelry-choice-visual" data-value="Classic" aria-pressed="false"><img src="assets/gallery-3.jpg" alt="Classic permanent jewelry style"><span>Classic</span></button>
+                <button type="button" class="jewelry-choice jewelry-choice-visual" data-value="Statement" aria-pressed="false"><img src="assets/gallery-7.jpg" alt="Statement permanent jewelry style"><span>Statement</span></button>
               </div>
             </fieldset>
 
@@ -137,6 +137,7 @@
           </div>
 
           <aside class="jewelry-profile-card" aria-live="polite">
+            <figure class="jewelry-profile-preview"><img data-jewelry-summary-image src="assets/gallery-1.jpg" alt="Bracelet permanent jewelry inspiration"></figure>
             <p class="eyebrow">Your Jewelry Profile</p>
             <h3 data-jewelry-summary-title>Delicate Bracelet</h3>
             <dl>
@@ -163,7 +164,7 @@
             <div><p class="eyebrow">Browse</p><h3>The Collection</h3><p>See chain styles, charm inspiration, finished fittings, and stacked looks.</p><span>Explore the collection →</span></div>
           </a>
           <a class="jewelry-path-card" href="jewelry-parties.html">
-            <img src="assets/jewelry-party-booth.jpg" alt="Anna at a permanent jewelry event booth" />
+            <img src="assets/gallery-7.jpg" alt="Friends wearing permanent jewelry together" />
             <div><p class="eyebrow">Gather</p><h3>Parties &amp; Private Events</h3><p>Bring the jewelry bar to bridal events, birthdays, girls' nights, business pop-ups, and more.</p><span>Plan an event →</span></div>
           </a>
           <a class="jewelry-path-card" href="jewelry-events.html">
@@ -244,7 +245,7 @@
       </div>
     </div>
   </footer>
-  <script src="script.js?v=3.7.0"></script>
+  <script src="script.js?v=3.7.1"></script>
   <script>const year = document.getElementById("yr"); if (year) year.textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -4281,3 +4281,292 @@ p { margin: 0 0 1rem; }
 }
 
 .jewelry-subnav a[aria-current="page"] { color: var(--burgundy); font-weight: 500; }
+
+/* ============================================================
+   V3.7.1 — Permanent Jewelry visual refinements
+   ============================================================ */
+
+/* Keep negative-z hero layers inside their section so the image/overlay
+   cannot fall behind the page background. This also gives every PJ hero
+   a safe contrast fallback while images load. */
+.jhero,
+.events.jewelry-events-hero {
+  isolation: isolate;
+  background: var(--burgundy);
+}
+
+.jhero::after {
+  background: linear-gradient(180deg, rgba(42, 24, 27, 0.58), rgba(42, 24, 27, 0.88));
+}
+
+.jhero-overview .jlogo {
+  filter: drop-shadow(0 2px 16px rgba(0,0,0,0.18));
+}
+.jhero-overview h1,
+.jhero-overview h1 em {
+  color: #fff7f7;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.22);
+}
+.jhero-overview .jewelry-hero-eyebrow,
+.jhero-overview p:not(.eyebrow) {
+  color: rgba(255,247,247,0.94);
+}
+
+.events.jewelry-events-hero::after {
+  background: linear-gradient(120deg, rgba(42,24,27,0.91), rgba(66,35,40,0.76));
+}
+.jewelry-events-hero h1 {
+  color: #fff7f7;
+  text-shadow: 0 2px 22px rgba(0,0,0,0.2);
+}
+.jewelry-events-hero .jewelry-light-eyebrow,
+.jewelry-events-hero p:not(.eyebrow) {
+  color: rgba(255,247,247,0.94);
+}
+
+/* Jewelry profile picker — visual choices + live preview */
+.jewelry-finder {
+  grid-template-columns: minmax(0,0.72fr) minmax(0,1.35fr) minmax(260px,0.82fr);
+  gap: clamp(1.5rem,3vw,2.5rem);
+}
+.jewelry-choice-row-visual {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 0.75rem;
+}
+.jewelry-choice-visual {
+  padding: 0;
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 92px auto;
+  border-radius: 0.8rem;
+  background: #fff;
+  text-align: center;
+}
+.jewelry-choice-visual img {
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+  filter: saturate(0.9);
+  transition: transform 0.3s var(--ease), filter 0.3s var(--ease);
+}
+.jewelry-choice-visual span {
+  display: block;
+  padding: 0.7rem 0.4rem 0.75rem;
+}
+.jewelry-choice-visual:hover img,
+.jewelry-choice-visual.is-active img {
+  transform: scale(1.035);
+  filter: saturate(1);
+}
+.jewelry-choice-visual.is-active {
+  box-shadow: 0 0 0 2px rgba(66,35,40,0.12);
+}
+.jewelry-choice-visual.is-active img {
+  opacity: 0.86;
+}
+
+.jewelry-profile-card {
+  overflow: hidden;
+  padding: 0 1.5rem 1.6rem;
+}
+.jewelry-profile-preview {
+  margin: 0 -1.5rem 1.4rem;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+}
+.jewelry-profile-preview img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 0.18s ease, transform 0.32s var(--ease);
+}
+.jewelry-profile-preview img.is-changing {
+  opacity: 0.25;
+  transform: scale(1.02);
+}
+
+/* Parties hero — deliberate two-line headline instead of awkward wrapping. */
+.jewelry-party-hero .jewelry-page-hero-grid {
+  grid-template-columns: minmax(0,1fr) minmax(360px,0.92fr);
+  gap: clamp(2.5rem,5vw,5rem);
+}
+.jewelry-party-hero h1 {
+  max-width: 11ch;
+  font-size: clamp(3.7rem,6.2vw,5.8rem);
+  line-height: 0.94;
+  letter-spacing: -0.022em;
+}
+.jewelry-party-hero h1 span,
+.jewelry-party-hero h1 em {
+  display: block;
+}
+.jewelry-party-hero h1 em {
+  margin-top: 0.08em;
+  color: var(--rosegold-deep);
+  font-weight: 400;
+}
+.party-hero-photo img {
+  aspect-ratio: 1 / 1.08;
+  height: auto;
+  object-position: center 54%;
+}
+
+/* Parties: turn How It Works into a clear, premium 4-step experience. */
+.party-process-section {
+  background: linear-gradient(180deg, var(--blush-soft), #fff 90%);
+}
+.party-process-head {
+  max-width: 52rem;
+  margin: 0 auto 2.4rem;
+}
+.party-process-head h2 {
+  color: var(--burgundy);
+  font-size: clamp(2.7rem,5vw,4.3rem);
+}
+.party-process-head > p:last-child {
+  max-width: 43rem;
+  margin-inline: auto;
+  color: rgba(64,63,65,0.72);
+}
+.party-steps {
+  border: 0;
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 1rem;
+}
+.party-steps li {
+  position: relative;
+  display: block;
+  min-height: 285px;
+  padding: 1.8rem 1.55rem 1.55rem;
+  border: 1px solid rgba(66,35,40,0.11);
+  border-radius: 0.95rem;
+  background: rgba(255,255,255,0.82);
+  box-shadow: 0 12px 34px rgba(66,35,40,0.055);
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.party-steps li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg,var(--rosegold-deep),var(--burgundy));
+  opacity: 0.65;
+}
+.party-steps li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(66,35,40,0.09);
+}
+.party-step-number {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.6rem;
+  border: 1px solid rgba(66,35,40,0.16);
+  border-radius: 999px;
+  color: var(--burgundy);
+  background: var(--blush-soft);
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+}
+.party-step-kicker {
+  margin: 0 0 0.45rem !important;
+  color: var(--rosegold-deep) !important;
+  font-family: var(--sans);
+  font-size: 0.63rem !important;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+.party-steps h3 {
+  font-size: 1.75rem;
+  line-height: 1.04;
+}
+.party-steps p:not(.party-step-kicker) {
+  margin-top: 0.8rem;
+  line-height: 1.75;
+}
+
+/* Jewelry Guide hero — reduce the dense letter/line collision and make the
+   editorial line break intentional. */
+.jewelry-guide-hero h1 {
+  max-width: 12ch;
+  font-size: clamp(3rem,5.2vw,5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.018em;
+}
+.jewelry-guide-hero h1 span,
+.jewelry-guide-hero h1 em {
+  display: block;
+}
+.jewelry-guide-hero h1 em {
+  margin-top: 0.08em;
+  color: var(--rosegold-deep);
+  font-weight: 400;
+}
+.jewelry-guide-hero figure img {
+  aspect-ratio: 1.08 / 1;
+  height: auto;
+  object-position: center 52%;
+}
+
+/* PJ hero content should not depend on scroll-reveal timing. */
+.jewelry-page-hero .reveal,
+.jewelry-events-hero .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 1100px) {
+  .jewelry-finder {
+    grid-template-columns: minmax(0,0.78fr) minmax(0,1.22fr);
+  }
+  .jewelry-profile-card {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 230px 1fr 1fr;
+    gap: 1rem 1.5rem;
+    align-items: start;
+    padding: 1.4rem;
+  }
+  .jewelry-profile-preview {
+    grid-row: 1 / 5;
+    margin: 0;
+    border-radius: 0.65rem;
+  }
+  .jewelry-profile-preview img { height: 100%; min-height: 230px; }
+  .jewelry-profile-card .eyebrow,
+  .jewelry-profile-card h3,
+  .jewelry-profile-card .jewelry-profile-note,
+  .jewelry-profile-card .btn { grid-column: 2; }
+  .jewelry-profile-card dl { grid-column: 3; grid-row: 1 / 5; margin: 0; }
+  .party-steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width: 860px) {
+  .jewelry-finder { grid-template-columns: 1fr; }
+  .jewelry-profile-card { display: block; padding: 0 1.5rem 1.6rem; }
+  .jewelry-profile-preview { margin: 0 -1.5rem 1.4rem; border-radius: 0; }
+  .jewelry-profile-preview img { min-height: 0; height: 260px; }
+  .jewelry-party-hero .jewelry-page-hero-grid { grid-template-columns: 1fr; }
+  .jewelry-party-hero h1 { max-width: 12ch; }
+}
+
+@media (max-width: 600px) {
+  .jewelry-choice-row-visual { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .jewelry-choice-visual { width: auto; grid-template-rows: 74px auto; }
+  .jewelry-choice-visual img { height: 74px; }
+  .jewelry-choice-visual span { padding: 0.6rem 0.2rem; font-size: 0.68rem; }
+  .party-steps { grid-template-columns: 1fr; }
+  .party-steps li { min-height: 0; }
+  .jewelry-party-hero h1,
+  .jewelry-guide-hero h1 { font-size: clamp(3rem,14vw,4.3rem); }
+}
+

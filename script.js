@@ -721,7 +721,14 @@ function initJewelryStyleFinder() {
   };
 
   const summaryTitle = finder.querySelector("[data-jewelry-summary-title]");
+  const summaryImage = finder.querySelector("[data-jewelry-summary-image]");
   const bookButton = finder.querySelector("[data-jewelry-book]");
+
+  const placementPreview = {
+    Bracelet: { src: "assets/gallery-1.jpg", alt: "Bracelet permanent jewelry inspiration" },
+    Anklet: { src: "assets/gallery-6.jpg", alt: "Anklet permanent jewelry inspiration" },
+    Necklace: { src: "assets/gallery-5.jpg", alt: "Necklace permanent jewelry inspiration" }
+  };
 
   function updateSummary(track = true) {
     finder.querySelectorAll("[data-jewelry-summary]").forEach((element) => {
@@ -731,6 +738,16 @@ function initJewelryStyleFinder() {
 
     if (summaryTitle) {
       summaryTitle.textContent = `${state.style} ${state.placement}`;
+    }
+
+    if (summaryImage) {
+      const preview = placementPreview[state.placement] || placementPreview.Bracelet;
+      summaryImage.classList.add("is-changing");
+      window.setTimeout(() => {
+        summaryImage.src = preview.src;
+        summaryImage.alt = preview.alt;
+        summaryImage.classList.remove("is-changing");
+      }, 90);
     }
 
     if (bookButton) {

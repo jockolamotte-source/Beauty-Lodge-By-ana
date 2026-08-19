@@ -1,13 +1,13 @@
 Beauty Lodge Website
-Version: V3.7.0
+Version: V3.7.1
 
-Based on: current uploaded Beauty-Lodge-By-ana-main build
+Based on: V3.7.0 Permanent Jewelry expansion
 
 Changes:
-- Expanded Permanent Jewelry into a five-page mini-site.
-- Rebuilt jewelry.html as the Permanent Jewelry overview and interactive style finder.
-- Added The Collection, Parties & Private Events, Pop-Ups & Markets, and Jewelry Guide pages.
-- Added a Jewelry dropdown to the primary navigation and a dedicated Permanent Jewelry sub-navigation.
-- Added a dedicated Permanent Jewelry event inquiry form using the existing Beauty Lodge FormSubmit workflow.
-- Reused existing gallery/event assets and added Anna's real permanent-jewelry booth photo.
-- Preserved current Beauty Lodge services, booking integration, analytics, event calendar, contact form, and Walnex Creative promotion.
+- Fixed Permanent Jewelry overview and Pop-Ups hero contrast by correcting negative-z hero stacking and strengthening overlays.
+- Added image-based placement/style choices and a live changing photo preview to the Jewelry Profile picker.
+- Reworked the Parties hero headline spacing and replaced the disliked Anna booth photo with jewelry-focused imagery.
+- Rebuilt the Parties “How It Works” area into four premium step cards.
+- Replaced the Anna photo on the Pop-Ups host section with a jewelry display image.
+- Refined the Jewelry Guide hero headline, line breaks, letter spacing, and image proportions.
+- Preserved booking, analytics, service controls, event calendar, contact forms, and the rest of the Beauty Lodge site.

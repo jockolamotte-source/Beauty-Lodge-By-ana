@@ -1,13 +1,13 @@
 Beauty Lodge Website
-Version: V3.6.17
+Version: V3.7.0
 
-Based on: V3.6.16
+Based on: current uploaded Beauty-Lodge-By-ana-main build
 
 Changes:
-- Replaced the simple Grand Opening pill with a more refined two-line
-  hero announcement.
-- Added a small uppercase Grand Opening label and larger italic
-  September 1 date.
-- Added tapered divider lines, rose-gold diamond accents, and a subtle glow.
-- Preserved the hero logo, tagline, sparkles, shimmer, lash finder,
-  contact form, hours, pricing, map, Walnex promotion, and all site features.
+- Expanded Permanent Jewelry into a five-page mini-site.
+- Rebuilt jewelry.html as the Permanent Jewelry overview and interactive style finder.
+- Added The Collection, Parties & Private Events, Pop-Ups & Markets, and Jewelry Guide pages.
+- Added a Jewelry dropdown to the primary navigation and a dedicated Permanent Jewelry sub-navigation.
+- Added a dedicated Permanent Jewelry event inquiry form using the existing Beauty Lodge FormSubmit workflow.
+- Reused existing gallery/event assets and added Anna's real permanent-jewelry booth photo.
+- Preserved current Beauty Lodge services, booking integration, analytics, event calendar, contact form, and Walnex Creative promotion.

@@ -3875,3 +3875,409 @@ p { margin: 0 0 1rem; }
     grid-column: 3;
   }
 }
+
+
+/* ============================================================
+   BEAUTY LODGE WEBSITE V3.7.0
+   Permanent Jewelry Mini-Site
+   ============================================================ */
+
+/* Jewelry dropdown navigation */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--charcoal);
+  font: inherit;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 300;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle.is-current,
+.nav-dropdown.open > .nav-dropdown-toggle { color: var(--burgundy); }
+.nav-dropdown-chevron { width: 0.9rem; height: 0.9rem; transition: transform 0.25s var(--ease); }
+.nav-dropdown.open .nav-dropdown-chevron { transform: rotate(180deg); }
+.nav-submenu {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  z-index: 70;
+  min-width: 15rem;
+  margin: 0;
+  padding: 0.6rem;
+  list-style: none;
+  border: 1px solid rgba(66,35,40,0.1);
+  border-radius: 0.8rem;
+  background: rgba(251,245,243,0.98);
+  box-shadow: 0 18px 50px rgba(42,24,27,0.13);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 0.5rem);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+}
+.nav-dropdown:hover > .nav-submenu,
+.nav-dropdown:focus-within > .nav-submenu,
+.nav-dropdown.open > .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+.nav-links .nav-submenu a {
+  display: block;
+  padding: 0.68rem 0.8rem;
+  border-radius: 0.45rem;
+  white-space: nowrap;
+  font-size: 0.68rem;
+  line-height: 1.25;
+}
+.nav-links .nav-submenu a:hover,
+.nav-links .nav-submenu a[aria-current="page"] { background: var(--blush); color: var(--burgundy); }
+
+/* Secondary PJ navigation */
+.jewelry-subnav {
+  position: sticky;
+  top: 72px;
+  z-index: 35;
+  border-bottom: 1px solid rgba(66,35,40,0.09);
+  background: rgba(251,245,243,0.94);
+  backdrop-filter: blur(10px);
+}
+.jewelry-subnav-inner {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.2rem, 4vw, 3.2rem);
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.jewelry-subnav-inner::-webkit-scrollbar { display: none; }
+.jewelry-subnav a {
+  flex: 0 0 auto;
+  color: rgba(64,63,65,0.76);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.jewelry-subnav a:hover { color: var(--burgundy); }
+
+.jewelry-site { background: var(--porcelain); }
+.jewelry-centered-head { margin-inline: auto; text-align: center; }
+.jewelry-centered-head .chain { margin-inline: auto; }
+
+/* Jewelry overview hero */
+.jhero-overview .jhero-inner { max-width: 54rem; margin-inline: auto; text-align: center; }
+.jhero-overview .jlogo { width: min(210px, 48vw); margin-bottom: 1.4rem; }
+.jhero-overview h1 { font-size: clamp(3.2rem, 8vw, 6.4rem); line-height: 0.9; }
+.jhero-overview h1 em { font-weight: 400; color: var(--blush); }
+.jhero-overview p:not(.eyebrow) { max-width: 43rem; margin-inline: auto; }
+.jewelry-hero-eyebrow { color: rgba(244,227,227,0.72); }
+.jewelry-hero-actions { justify-content: center; margin-top: 2rem; }
+.jewelry-hero-ghost { border-color: rgba(244,227,227,0.7); color: var(--blush); }
+.jewelry-hero-ghost:hover { background: var(--blush); color: var(--burgundy); }
+
+/* Feature process */
+.jewelry-intro { background: #fff; }
+.jewelry-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  border-top: 1px solid rgba(66,35,40,0.14);
+  border-bottom: 1px solid rgba(66,35,40,0.14);
+}
+.jewelry-feature-grid article { padding: 2rem 1.7rem; border-right: 1px solid rgba(66,35,40,0.12); }
+.jewelry-feature-grid article:last-child { border-right: 0; }
+.jewelry-feature-grid span,
+.party-steps > li > span,
+.placement-list article > span,
+.before-fitting-list span {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  color: var(--rosegold-deep);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+.jewelry-feature-grid h3 { color: var(--burgundy); font-size: 1.8rem; }
+.jewelry-feature-grid p { margin-top: 0.6rem; color: rgba(64,63,65,0.76); font-size: 0.9rem; }
+
+/* Interactive jewelry finder */
+.jewelry-finder-section { background: var(--blush-soft); }
+.jewelry-finder {
+  display: grid;
+  grid-template-columns: minmax(0,0.8fr) minmax(0,1.25fr) minmax(15rem,0.72fr);
+  gap: clamp(1.5rem,4vw,3rem);
+  padding: clamp(1.5rem,4vw,3.2rem);
+  border: 1px solid rgba(66,35,40,0.12);
+  border-radius: 1.2rem;
+  background: rgba(255,255,255,0.75);
+  box-shadow: 0 24px 70px rgba(66,35,40,0.07);
+}
+.jewelry-finder-copy h2 { color: var(--burgundy); font-size: clamp(2.5rem,5vw,4rem); }
+.jewelry-finder-copy > p:last-child { color: rgba(64,63,65,0.75); margin-top: 1rem; }
+.jewelry-finder-steps { display: grid; gap: 1.6rem; }
+.jewelry-choice-group { margin: 0; padding: 0 0 1.5rem; border: 0; border-bottom: 1px solid rgba(66,35,40,0.12); }
+.jewelry-choice-group:last-child { padding-bottom: 0; border-bottom: 0; }
+.jewelry-choice-group legend { width: 100%; margin-bottom: 0.75rem; color: var(--burgundy); font-family: var(--display); font-size: 1.35rem; }
+.jewelry-choice-group legend span { margin-right: 0.65rem; color: var(--rosegold-deep); font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.15em; }
+.jewelry-choice-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.jewelry-choice {
+  border: 1px solid rgba(66,35,40,0.2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--charcoal);
+  padding: 0.7rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: 180ms ease;
+}
+.jewelry-choice:hover { border-color: var(--burgundy); color: var(--burgundy); }
+.jewelry-choice.is-active { border-color: var(--burgundy); background: var(--burgundy); color: var(--blush); }
+.jewelry-profile-card { align-self: stretch; padding: 1.6rem; border-radius: 1rem; background: var(--burgundy); color: var(--blush); }
+.jewelry-profile-card .eyebrow { color: var(--rosegold); }
+.jewelry-profile-card h3 { font-size: 2.2rem; }
+.jewelry-profile-card dl { margin: 1.4rem 0; }
+.jewelry-profile-card dl div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.65rem 0; border-top: 1px solid rgba(244,227,227,0.16); }
+.jewelry-profile-card dt { color: rgba(244,227,227,0.62); font-size: 0.66rem; letter-spacing: 0.13em; text-transform: uppercase; }
+.jewelry-profile-card dd { margin: 0; text-align: right; }
+.jewelry-profile-note { color: rgba(244,227,227,0.7); font-size: 0.8rem; }
+.jewelry-profile-card .btn { margin-top: 0.5rem; background: var(--blush); color: var(--burgundy); }
+
+/* Path cards */
+.jewelry-paths-section { background: #fff; }
+.jewelry-path-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
+.jewelry-path-card { overflow: hidden; border: 1px solid rgba(66,35,40,0.1); border-radius: 0.8rem; background: var(--porcelain); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.jewelry-path-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.jewelry-path-card img { width: 100%; aspect-ratio: 1.3/1; object-fit: cover; }
+.jewelry-path-card > div { padding: 1.4rem; }
+.jewelry-path-card h3 { color: var(--burgundy); font-size: 2rem; }
+.jewelry-path-card p:not(.eyebrow) { color: rgba(64,63,65,0.74); }
+.jewelry-path-card span { color: var(--burgundy); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Gallery preview */
+.jewelry-gallery-preview { background: var(--blush-soft); }
+.jewelry-gallery-preview-head { display:flex; align-items:end; justify-content:space-between; gap:1rem; margin-bottom:2rem; }
+.jewelry-gallery-preview-head h2 { color:var(--burgundy); font-size:clamp(2.2rem,5vw,3.6rem); }
+.jewelry-gallery-preview-head > a { color:var(--burgundy); font-size:0.7rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; }
+.jewelry-preview-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0.75rem; }
+.jewelry-preview-grid figure { margin:0; overflow:hidden; border-radius:0.45rem; }
+.jewelry-preview-grid img { width:100%; aspect-ratio:0.82/1; object-fit:cover; transition:transform 0.4s var(--ease); }
+.jewelry-preview-grid figure:hover img { transform:scale(1.035); }
+.jewelry-final-cta .chain { margin-inline:auto; }
+
+/* Shared jewelry page hero */
+.jewelry-page-hero { padding: clamp(3.5rem,8vw,7rem) 0; background: linear-gradient(135deg,var(--blush-soft),var(--porcelain)); }
+.jewelry-page-hero-grid { display:grid; grid-template-columns:minmax(0,0.88fr) minmax(0,1.12fr); gap:clamp(2rem,6vw,5.5rem); align-items:center; }
+.jewelry-page-hero h1 { color:var(--burgundy); font-size:clamp(3.4rem,7vw,6.2rem); line-height:0.92; }
+.jewelry-page-hero p:not(.eyebrow) { max-width:38rem; margin:1.2rem 0 1.8rem; color:rgba(64,63,65,0.76); font-size:1.04rem; }
+.jewelry-page-hero figure { margin:0; overflow:hidden; border-radius:0.8rem; box-shadow:var(--shadow); }
+.jewelry-page-hero figure img { width:100%; height:min(62vw,38rem); object-fit:cover; }
+.jewelry-collection-hero figure img { object-position:center 46%; }
+.party-hero-photo img { object-position:center 32%; }
+
+/* Collection */
+.collection-styles { background:#fff; }
+.collection-style-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:0.85rem; }
+.collection-style-grid article { padding-bottom:1rem; border-bottom:1px solid rgba(66,35,40,0.13); }
+.collection-style-grid img { width:100%; aspect-ratio:0.78/1; object-fit:cover; border-radius:0.45rem; margin-bottom:1rem; }
+.collection-style-grid h3 { color:var(--burgundy); font-size:1.7rem; }
+.collection-style-grid p:not(.eyebrow) { color:rgba(64,63,65,0.72); font-size:0.86rem; }
+.placement-section { background:var(--blush-soft); }
+.placement-grid { display:grid; grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr); gap:clamp(2rem,6vw,5rem); align-items:start; }
+.placement-grid h2 { color:var(--burgundy); font-size:clamp(2.5rem,5vw,4rem); }
+.placement-grid > div:first-child > p:last-child { margin-top:1rem; color:rgba(64,63,65,0.75); }
+.placement-list { border-top:1px solid rgba(66,35,40,0.14); }
+.placement-list article { display:grid; grid-template-columns:3rem 1fr; gap:1rem; padding:1.35rem 0; border-bottom:1px solid rgba(66,35,40,0.14); }
+.placement-list h3 { color:var(--burgundy); font-size:1.7rem; }
+.placement-list p { margin:0.3rem 0 0; color:rgba(64,63,65,0.7); }
+.collection-gallery-section { background:var(--porcelain); }
+.gallery-note { color:rgba(64,63,65,0.6); font-size:0.8rem; }
+.jewelry-full-gallery { grid-template-columns:repeat(4,1fr); }
+
+/* Parties */
+.party-occasion-section { background:#fff; }
+.occasion-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; }
+.occasion-grid article { padding:1.7rem; border:1px solid rgba(66,35,40,0.11); border-radius:0.65rem; background:var(--porcelain); }
+.occasion-grid h3 { color:var(--burgundy); font-size:1.8rem; }
+.occasion-grid p { color:rgba(64,63,65,0.72); font-size:0.88rem; margin-top:0.6rem; }
+.party-process-section { background:var(--blush-soft); }
+.party-process-grid { display:grid; grid-template-columns:minmax(0,0.75fr) minmax(0,1.25fr); gap:clamp(2rem,6vw,5rem); }
+.party-process-grid h2 { color:var(--burgundy); font-size:clamp(2.5rem,5vw,4rem); }
+.party-steps { list-style:none; margin:0; padding:0; border-top:1px solid rgba(66,35,40,0.14); }
+.party-steps li { display:grid; grid-template-columns:3.2rem 1fr; gap:1rem; padding:1.3rem 0; border-bottom:1px solid rgba(66,35,40,0.14); }
+.party-steps h3 { color:var(--burgundy); font-size:1.6rem; }
+.party-steps p { margin:0.3rem 0 0; color:rgba(64,63,65,0.72); }
+.event-inquiry-section { background:var(--porcelain); padding:clamp(4rem,8vw,7rem) 0; }
+
+/* Events */
+.jewelry-events-hero { min-height:58vh; display:grid; place-items:center; }
+.jewelry-events-hero .events-inner { max-width:48rem; margin-inline:auto; text-align:center; }
+.jewelry-events-hero h1 { font-size:clamp(3.3rem,8vw,6rem); color:var(--blush); }
+.jewelry-light-eyebrow { color:var(--rosegold); }
+.public-events-section { background:#fff; }
+.public-events-section .popups { margin-top:0; }
+.public-events-section .popups-heading { max-width:46rem; margin:0 auto 2.5rem; text-align:center; }
+.public-events-section .popups-heading h2 { color:var(--burgundy); font-size:clamp(2.4rem,5vw,4rem); }
+.event-host-section { background:var(--blush-soft); }
+.event-host-grid { display:grid; grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr); gap:clamp(2rem,6vw,5rem); align-items:center; }
+.event-host-grid figure { margin:0; overflow:hidden; border-radius:0.8rem; box-shadow:var(--shadow); }
+.event-host-grid figure img { width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center 35%; }
+.event-host-grid h2 { color:var(--burgundy); font-size:clamp(2.5rem,5vw,4rem); }
+.event-host-grid > div > p:not(.eyebrow) { color:rgba(64,63,65,0.75); }
+.event-host-list { display:grid; gap:0.55rem; padding:0; margin:1.2rem 0 1.8rem; list-style:none; }
+.event-host-list li::before { content:"✦"; margin-right:0.6rem; color:var(--rosegold-deep); }
+
+/* Guide */
+.jewelry-guide-hero figure img { object-position:center; }
+.jewelry-guide-basics { background:#fff; }
+.guide-basics-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.guide-basics-grid article { padding:1.7rem; border-top:1px solid rgba(66,35,40,0.16); border-bottom:1px solid rgba(66,35,40,0.16); }
+.guide-basics-grid h3 { color:var(--burgundy); font-size:1.8rem; }
+.guide-basics-grid p:not(.eyebrow) { color:rgba(64,63,65,0.72); }
+.jewelry-faq-section { background:var(--blush-soft); }
+.before-fitting-section { background:#fff; }
+.before-fitting-grid { display:grid; grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr); gap:clamp(2rem,6vw,5rem); }
+.before-fitting-grid h2 { color:var(--burgundy); font-size:clamp(2.4rem,5vw,3.8rem); }
+.before-fitting-list { border-top:1px solid rgba(66,35,40,0.14); }
+.before-fitting-list p { display:grid; grid-template-columns:3rem 1fr; gap:0.8rem; padding:1.1rem 0; margin:0; border-bottom:1px solid rgba(66,35,40,0.14); color:rgba(64,63,65,0.76); }
+.footer-jewelry-links a { color:inherit; }
+.footer-jewelry-links a:hover { color:var(--blush); text-decoration:underline; }
+
+@media (max-width: 1100px) {
+  .jewelry-finder { grid-template-columns:0.8fr 1.2fr; }
+  .jewelry-profile-card { grid-column:1/-1; display:grid; grid-template-columns:1fr 1.1fr; gap:1rem 2rem; align-items:start; }
+  .jewelry-profile-card .eyebrow, .jewelry-profile-card h3 { grid-column:1; }
+  .jewelry-profile-card dl { grid-column:2; grid-row:1/4; margin:0; }
+  .jewelry-profile-card .jewelry-profile-note, .jewelry-profile-card .btn { grid-column:1; }
+  .collection-style-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+
+@media (max-width: 860px) {
+  .nav-dropdown-toggle { display:flex; justify-content:space-between; width:100%; padding:0.85rem 0; border-bottom:1px solid rgba(66,35,40,0.07); }
+  .nav-submenu { position:static; min-width:0; width:100%; padding:0 0 0 1rem; border:0; border-radius:0; box-shadow:none; background:transparent; opacity:1; visibility:visible; transform:none; display:none; }
+  .nav-dropdown.open > .nav-submenu { display:block; }
+  .nav-dropdown:hover > .nav-submenu, .nav-dropdown:focus-within > .nav-submenu { transform:none; }
+  .nav-links .nav-submenu a { padding:0.7rem 0; border-radius:0; font-size:0.66rem; }
+  .jewelry-subnav { top:68px; }
+  .jewelry-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .jewelry-feature-grid article:nth-child(2) { border-right:0; }
+  .jewelry-feature-grid article:nth-child(-n+2) { border-bottom:1px solid rgba(66,35,40,0.12); }
+  .jewelry-finder { grid-template-columns:1fr; }
+  .jewelry-profile-card { display:block; grid-column:auto; }
+  .jewelry-profile-card dl { margin:1.4rem 0; }
+  .jewelry-path-grid { grid-template-columns:1fr; }
+  .jewelry-path-card { display:grid; grid-template-columns:0.85fr 1.15fr; }
+  .jewelry-path-card img { height:100%; aspect-ratio:auto; }
+  .jewelry-preview-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .jewelry-page-hero-grid, .placement-grid, .party-process-grid, .event-host-grid, .before-fitting-grid { grid-template-columns:1fr; }
+  .jewelry-page-hero figure { max-width:38rem; }
+  .jewelry-page-hero figure img { height:auto; aspect-ratio:1/1; }
+  .collection-style-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .occasion-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .guide-basics-grid { grid-template-columns:1fr; }
+}
+
+@media (max-width: 600px) {
+  .jewelry-subnav-inner { justify-content:flex-start; padding-inline:1rem; }
+  .jewelry-feature-grid { grid-template-columns:1fr; }
+  .jewelry-feature-grid article { border-right:0; border-bottom:1px solid rgba(66,35,40,0.12); }
+  .jewelry-feature-grid article:last-child { border-bottom:0; }
+  .jewelry-choice-row { display:grid; grid-template-columns:1fr; }
+  .jewelry-choice { width:100%; text-align:center; }
+  .jewelry-path-card { grid-template-columns:1fr; }
+  .jewelry-path-card img { aspect-ratio:1.45/1; }
+  .jewelry-gallery-preview-head { align-items:flex-start; flex-direction:column; }
+  .jewelry-preview-grid { grid-template-columns:1fr 1fr; }
+  .collection-style-grid, .occasion-grid { grid-template-columns:1fr; }
+  .jewelry-full-gallery { grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width: 420px) {
+  .jewelry-full-gallery { grid-template-columns:1fr; }
+}
+
+/* V3.7.0 finishing refinements */
+.jewelry-subnav {
+  position: relative;
+  top: auto;
+}
+
+.public-events-section .popups {
+  padding-top: 0;
+  border-top: 0;
+}
+.public-events-section .popups-heading .eyebrow {
+  color: var(--rosegold-deep);
+}
+.public-events-section .popups-heading p:not(.eyebrow) {
+  color: rgba(64, 63, 65, 0.75);
+}
+.public-events-section .popup-schedule {
+  margin: 0 0 0.55rem;
+  color: #6f3942;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.055em;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+.public-events-section .popup-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0 0 0.65rem;
+  color: #4a3f41;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.public-events-section .popup-description {
+  margin: 0.85rem 0 0;
+  color: #4a3f41;
+  line-height: 1.7;
+}
+.public-events-section .popup-status {
+  color: rgba(64, 63, 65, 0.72);
+  border-color: rgba(66, 35, 40, 0.14);
+  background: var(--blush-soft);
+}
+.public-events-section .popup-empty {
+  border-color: rgba(66, 35, 40, 0.14);
+  background: var(--blush-soft);
+}
+.public-events-section .popup-empty .eyebrow {
+  color: var(--rosegold-deep);
+}
+.public-events-section .popup-empty h4 {
+  color: var(--burgundy);
+}
+.public-events-section .popup-empty p:not(.eyebrow) {
+  color: rgba(64, 63, 65, 0.76);
+}
+.public-events-section .popup-empty .btn-light {
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+}
+.public-events-section .popup-empty .btn-light:hover {
+  background: var(--burgundy);
+  color: var(--blush);
+}
+
+@media (max-width: 700px) {
+  .public-events-section .popup-location {
+    justify-content: center;
+  }
+}
+
+.jewelry-subnav a[aria-current="page"] { color: var(--burgundy); font-weight: 500; }

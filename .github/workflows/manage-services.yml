@@ -10,6 +10,8 @@ on:
         options:
           - Natural Full Set
           - Natural Refill
+          - Hybrid Full Set
+          - Hybrid Refill
           - Volume Set
           - Volume Refill
           - Lash Lift & Tint
@@ -52,6 +54,8 @@ jobs:
           service_map = {
               "Natural Full Set": "fullSet",
               "Natural Refill": "refill",
+              "Hybrid Full Set": "hybridSet",
+              "Hybrid Refill": "hybridRefill",
               "Volume Set": "volumeSet",
               "Volume Refill": "volumeRefill",
               "Lash Lift & Tint": "lashLiftTint",

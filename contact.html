@@ -36,7 +36,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles.css?v=3.6.18" />
+  <link rel="stylesheet" href="styles.css?v=3.7.0" />
 
   <style>
     /* Team page spacing and photo balance */
@@ -126,94 +126,44 @@
 <!-- ================= NAV ================= -->
   <header class="nav">
     <div class="nav-inner">
-
-      <a
-        href="index.html"
-        class="brand brand-wordmark"
-        aria-label="Beauty Lodge by Anna — home"
-      >
+      <a href="index.html" class="brand brand-wordmark" aria-label="Beauty Lodge by Anna — home">
         <span class="brand-wordmark-name">Beauty Lodge</span>
         <span class="brand-wordmark-by">BY ANNA</span>
       </a>
-
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Menu"
-        aria-expanded="false"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          aria-hidden="true"
-        >
-          <path d="M3 6h18M3 12h18M3 18h18" />
-        </svg>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
       </button>
-
       <ul class="nav-links">
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#about">About</a></li>
-        <li><a href="jewelry.html#events">Events</a></li>
-        <li><a href="jewelry.html">Jewelry</a></li>
-        <li>
-          <a href="team.html">Our Team</a>
+        <li><a href="jewelry-events.html">Events</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Jewelry</span>
+            <svg class="nav-dropdown-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 8 4 4 4-4" /></svg>
+          </button>
+          <ul class="nav-submenu" aria-label="Permanent Jewelry">
+            <li><a href="jewelry.html">Overview</a></li>
+            <li><a href="jewelry-collection.html">The Collection</a></li>
+            <li><a href="jewelry-parties.html">Parties &amp; Private Events</a></li>
+            <li><a href="jewelry-events.html">Pop-Ups &amp; Markets</a></li>
+            <li><a href="jewelry-guide.html">Jewelry Guide</a></li>
+          </ul>
         </li>
+        <li><a href="team.html">Our Team</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
         <li><a href="contact.html" aria-current="page">Contact</a></li>
-
         <li>
-          <a
-            class="nav-ig"
-            data-ig
-            aria-label="Instagram"
-            href="#"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
-            >
-              <rect
-                x="3"
-                y="3"
-                width="18"
-                height="18"
-                rx="5"
-              />
-
-              <circle
-                cx="12"
-                cy="12"
-                r="3.6"
-              />
-
-              <circle
-                cx="17.4"
-                cy="6.6"
-                r="1.1"
-                fill="currentColor"
-                stroke="none"
-              />
+          <a class="nav-ig" data-ig aria-label="Instagram" href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="3.6" />
+              <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none" />
             </svg>
           </a>
         </li>
-
-        <li>
-          <a
-            class="btn btn-primary btn-sm"
-            data-book
-            href="#"
-          >
-            Book Now
-          </a>
-        </li>
+        <li><a class="btn btn-primary btn-sm" data-book href="#">Book Now</a></li>
       </ul>
-
     </div>
   </header>
   <main class="contact-page">
@@ -376,6 +326,7 @@
                   <option>Lash Removal</option>
                   <option>Permanent Makeup</option>
                   <option>Permanent Jewelry</option>
+                  <option>Permanent Jewelry Party / Pop-Up</option>
                   <option>Event or Group Booking</option>
                   <option>Other</option>
                 </select>
@@ -649,7 +600,7 @@
   </footer>
 
 
-  <script src="script.js?v=3.6.18"></script>
+  <script src="script.js?v=3.7.0"></script>
 
   <script>
     const year = document.getElementById("yr");

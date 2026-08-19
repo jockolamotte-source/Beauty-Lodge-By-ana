@@ -7,6 +7,14 @@
     "name": "Natural Refill",
     "state": "available"
   },
+  "hybridSet": {
+    "name": "Hybrid Full Set",
+    "state": "available"
+  },
+  "hybridRefill": {
+    "name": "Hybrid Refill",
+    "state": "available"
+  },
   "volumeSet": {
     "name": "Volume Set",
     "state": "available"

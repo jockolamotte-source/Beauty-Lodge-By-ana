@@ -28,6 +28,8 @@ function getButtonLocation(element) {
     [".hero", "hero"],
     [".svc-card", "service_card"],
     [".lash-finder", "lash_finder"],
+    [".jewelry-finder", "jewelry_style_finder"],
+    [".event-inquiry-section", "jewelry_event_inquiry"],
     [".teaser", "jewelry_teaser"],
     [".jcta", "jewelry_cta"],
     [".events", "events"],
@@ -670,6 +672,107 @@ function initLashStyleFinder() {
 }
 
 
+
+
+/* ============================================================
+   PERMANENT JEWELRY MINI-SITE
+   ============================================================ */
+
+function initJewelryNavigation() {
+  const currentPage = window.location.pathname.split("/").pop() || "jewelry.html";
+  document.querySelectorAll(".jewelry-subnav a").forEach((link) => {
+    const hrefPage = (link.getAttribute("href") || "").split("#")[0];
+    if (hrefPage === currentPage) link.setAttribute("aria-current", "page");
+  });
+
+  const dropdown = document.querySelector(".nav-dropdown");
+  const button = dropdown?.querySelector(".nav-dropdown-toggle");
+  if (!dropdown || !button) return;
+
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const open = dropdown.classList.toggle("open");
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove("open");
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      dropdown.classList.remove("open");
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+function initJewelryStyleFinder() {
+  const finder = document.querySelector("[data-jewelry-finder]");
+  if (!finder) return;
+
+  const state = {
+    placement: "Bracelet",
+    style: "Delicate",
+    accent: "Chain only"
+  };
+
+  const summaryTitle = finder.querySelector("[data-jewelry-summary-title]");
+  const bookButton = finder.querySelector("[data-jewelry-book]");
+
+  function updateSummary(track = true) {
+    finder.querySelectorAll("[data-jewelry-summary]").forEach((element) => {
+      const key = element.dataset.jewelrySummary;
+      if (key && state[key]) element.textContent = state[key];
+    });
+
+    if (summaryTitle) {
+      summaryTitle.textContent = `${state.style} ${state.placement}`;
+    }
+
+    if (bookButton) {
+      bookButton.dataset.bookService =
+        `Permanent Jewelry Fitting — ${state.style} ${state.placement}, ${state.accent}`;
+      bookButton.setAttribute(
+        "aria-label",
+        `Book a ${state.style.toLowerCase()} ${state.placement.toLowerCase()} permanent jewelry fitting`
+      );
+    }
+
+    if (track) {
+      trackBeautyLodgeEvent("jewelry_style_update", {
+        button_location: "jewelry_style_finder",
+        jewelry_placement: state.placement,
+        jewelry_style: state.style,
+        jewelry_accent: state.accent
+      });
+    }
+  }
+
+  finder.querySelectorAll("[data-jewelry-group]").forEach((group) => {
+    const key = group.dataset.jewelryGroup;
+
+    group.querySelectorAll(".jewelry-choice").forEach((button) => {
+      button.addEventListener("click", () => {
+        group.querySelectorAll(".jewelry-choice").forEach((choice) => {
+          const selected = choice === button;
+          choice.classList.toggle("is-active", selected);
+          choice.setAttribute("aria-pressed", selected ? "true" : "false");
+        });
+
+        state[key] = button.dataset.value || button.textContent.trim();
+        updateSummary(true);
+      });
+    });
+  });
+
+  updateSummary(false);
+}
+
+
 document.addEventListener("DOMContentLoaded", async () => {
   await loadServiceAvailability();
 
@@ -730,6 +833,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     });
   }
+
+  initJewelryNavigation();
+  initJewelryStyleFinder();
 
   const reduceMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"

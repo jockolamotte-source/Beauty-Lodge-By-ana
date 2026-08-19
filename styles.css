@@ -4570,3 +4570,95 @@ p { margin: 0 0 1rem; }
   .jewelry-guide-hero h1 { font-size: clamp(3rem,14vw,4.3rem); }
 }
 
+
+
+/* ============================================================
+   V3.7.2 — Permanent Jewelry professional photography + polish
+   ============================================================ */
+
+/* Force 01 / 02 / 03 / 04 into the center of the step circles. */
+.party-steps > li > .party-step-number {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: static !important;
+  width: 3.15rem !important;
+  height: 3.15rem !important;
+  margin: 0 0 1.45rem 0 !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  text-indent: 0.08em;
+  box-sizing: border-box;
+}
+
+.jewelry-choice-visual {
+  grid-template-rows: 108px auto;
+}
+.jewelry-choice-visual img {
+  height: 108px;
+}
+.jewelry-choice-row-visual-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.jewelry-choice-row-visual-two .jewelry-choice-visual {
+  grid-template-rows: 116px auto;
+}
+.jewelry-choice-row-visual-two .jewelry-choice-visual img {
+  height: 116px;
+}
+
+.jewelry-profile-preview img {
+  height: 235px;
+  object-position: center 46%;
+}
+
+.jhero-overview .jhero-bg {
+  object-position: center 54%;
+  filter: saturate(0.9) contrast(1.02);
+}
+.jhero-overview::after {
+  background:
+    linear-gradient(120deg, rgba(42,24,27,0.88), rgba(66,35,40,0.63)),
+    linear-gradient(0deg, rgba(20,10,12,0.22), rgba(20,10,12,0.06));
+}
+
+.jewelry-collection-hero figure img {
+  object-position: center 45%;
+}
+.jewelry-party-hero .party-hero-photo img {
+  object-position: center 40%;
+}
+.jewelry-guide-hero figure img {
+  object-position: center 50%;
+}
+.events.jewelry-events-hero .events-bg {
+  object-position: center 52%;
+  filter: saturate(0.85) contrast(1.03);
+}
+.event-host-grid figure img {
+  object-position: center 52%;
+}
+
+.jewelry-preview-grid img,
+.jewelry-full-gallery img,
+.collection-style-grid img,
+.jewelry-path-card > img {
+  filter: saturate(0.94) contrast(1.01);
+}
+
+@media (max-width: 600px) {
+  .jewelry-choice-visual {
+    grid-template-rows: 82px auto;
+  }
+  .jewelry-choice-visual img {
+    height: 82px;
+  }
+  .jewelry-choice-row-visual-two .jewelry-choice-visual {
+    grid-template-rows: 92px auto;
+  }
+  .jewelry-choice-row-visual-two .jewelry-choice-visual img {
+    height: 92px;
+  }
+}

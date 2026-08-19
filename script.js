@@ -724,11 +724,17 @@ function initJewelryStyleFinder() {
   const summaryImage = finder.querySelector("[data-jewelry-summary-image]");
   const bookButton = finder.querySelector("[data-jewelry-book]");
 
-  const placementPreview = {
-    Bracelet: { src: "assets/gallery-1.jpg", alt: "Bracelet permanent jewelry inspiration" },
-    Anklet: { src: "assets/gallery-6.jpg", alt: "Anklet permanent jewelry inspiration" },
-    Necklace: { src: "assets/gallery-5.jpg", alt: "Necklace permanent jewelry inspiration" }
+  const jewelryPreview = {
+    delicate: { src: "assets/pj/delicate.jpg", alt: "Delicate permanent jewelry chain inspiration" },
+    classic: { src: "assets/pj/classic.jpg", alt: "Classic permanent jewelry chain inspiration" },
+    statement: { src: "assets/pj/statement.jpg", alt: "Statement permanent jewelry chain inspiration" },
+    charm: { src: "assets/pj/charms.jpg", alt: "Permanent jewelry charm and connector inspiration" }
   };
+
+  function getJewelryPreview() {
+    if (state.accent === "Charm accent") return jewelryPreview.charm;
+    return jewelryPreview[state.style.toLowerCase()] || jewelryPreview.delicate;
+  }
 
   function updateSummary(track = true) {
     finder.querySelectorAll("[data-jewelry-summary]").forEach((element) => {
@@ -741,7 +747,7 @@ function initJewelryStyleFinder() {
     }
 
     if (summaryImage) {
-      const preview = placementPreview[state.placement] || placementPreview.Bracelet;
+      const preview = getJewelryPreview();
       summaryImage.classList.add("is-changing");
       window.setTimeout(() => {
         summaryImage.src = preview.src;

@@ -526,7 +526,7 @@ const LASH_STYLE_OPTIONS = {
   natural: {
     tabId: "lash-choice-natural",
     title: "Natural Full Set",
-    image: "assets/card-fullset.jpg",
+    image: "assets/newnatural.jpg",
     imageAlt: "Natural Full Set lash result",
     description:
       "A soft, polished extension look that adds length and definition without appearing overly dramatic.",

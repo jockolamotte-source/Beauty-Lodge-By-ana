@@ -1,13 +1,4 @@
-Beauty Lodge Website
-Version: V3.7.1
-
-Based on: V3.7.0 Permanent Jewelry expansion
-
-Changes:
-- Fixed Permanent Jewelry overview and Pop-Ups hero contrast by correcting negative-z hero stacking and strengthening overlays.
-- Added image-based placement/style choices and a live changing photo preview to the Jewelry Profile picker.
-- Reworked the Parties hero headline spacing and replaced the disliked Anna booth photo with jewelry-focused imagery.
-- Rebuilt the Parties “How It Works” area into four premium step cards.
-- Replaced the Anna photo on the Pop-Ups host section with a jewelry display image.
-- Refined the Jewelry Guide hero headline, line breaks, letter spacing, and image proportions.
-- Preserved booking, analytics, service controls, event calendar, contact forms, and the rest of the Beauty Lodge site.
+Beauty Lodge by Anna
+Version: V3.7.2
+Date: 2026-08-18
+Based on: V3.7.1 Permanent Jewelry visual refinement

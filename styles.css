@@ -4984,3 +4984,14 @@ p { margin: 0 0 1rem; }
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Center Services intro only */
+#services .section-head {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#services .section-head .chain {
+  justify-content: center;
+}

@@ -1,4 +1,6 @@
 Beauty Lodge by Anna
-Version: V3.7.2
-Date: 2026-08-18
-Based on: V3.7.1 Permanent Jewelry visual refinement
+Version: V4.1.0
+Date: 2026-09-01
+Based on: V4.0.6
+
+Major update: GitHub Actions now manages service availability, regular price, duration, and optional special pricing from assets/services.json.

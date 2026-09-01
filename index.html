@@ -41,7 +41,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles.css?v=3.7.2" />
+  <link rel="stylesheet" href="styles.css?v=4.1.0" />
 </head>
 
 <body>
@@ -306,6 +306,21 @@
             <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
           </article>
 
+          <article class="svc-card" data-service="foreignFill">
+            <img class="svc-img" src="assets/card-foreign-fill.jpg" alt="Foreign fill lash extension result" />
+            <h3>Foreign Fill</h3>
+            <p class="desc">
+              This service is for you if you already have lashes done by a different artist.
+              Anna will assess your existing set, remove outgrown lashes as needed, and blend
+              fresh extensions into the remaining work.
+            </p>
+            <div class="svc-meta">
+              <span class="svc-price">$75</span>
+              <span class="svc-dur">1 hr 30 min</span>
+            </div>
+            <a class="btn btn-ghost btn-sm" data-book href="#">Book</a>
+          </article>
+
         </div>
       </div>
 
@@ -461,6 +476,43 @@
 
           <button
             class="lash-choice"
+            id="lash-choice-hybrid"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="lash-finder-result"
+            tabindex="-1"
+            data-lash-style="hybrid"
+          >
+            <span class="lash-choice-image">
+              <img
+                src="assets/card-hybrid.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </span>
+
+            <span class="lash-choice-copy">
+              <strong>Textured &amp; balanced</strong>
+              <small>A soft blend of definition and volume</small>
+            </span>
+
+            <span class="lash-choice-check" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 12 4 4 8-9" />
+              </svg>
+            </span>
+          </button>
+
+          <button
+            class="lash-choice"
             id="lash-choice-volume"
             type="button"
             role="tab"
@@ -480,6 +532,43 @@
             <span class="lash-choice-copy">
               <strong>Full &amp; dramatic</strong>
               <small>More density and noticeable impact</small>
+            </span>
+
+            <span class="lash-choice-check" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 12 4 4 8-9" />
+              </svg>
+            </span>
+          </button>
+
+          <button
+            class="lash-choice"
+            id="lash-choice-foreign"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="lash-finder-result"
+            tabindex="-1"
+            data-lash-style="foreign"
+          >
+            <span class="lash-choice-image">
+              <img
+                src="assets/foreign-fill-result.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </span>
+
+            <span class="lash-choice-copy">
+              <strong>Already have extensions</strong>
+              <small>Refresh lashes applied by another artist</small>
             </span>
 
             <span class="lash-choice-check" aria-hidden="true">
@@ -1221,7 +1310,7 @@
   </footer>
 
 
-  <script src="script.js?v=3.7.2"></script>
+  <script src="script.js?v=4.1.0"></script>
 
   <script>
     const year = document.getElementById("yr");

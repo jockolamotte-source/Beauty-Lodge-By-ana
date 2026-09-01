@@ -414,12 +414,14 @@ async function loadPopupEvents() {
 
 
 /* ============================================================
-   SERVICE AVAILABILITY
+   SERVICE CONFIGURATION
    Controlled by assets/services.json through GitHub Actions.
+   One source of truth for availability, price, duration, and specials.
    States: available, unavailable, hidden.
    ============================================================ */
 
 const SERVICES_CONFIG_URL = "assets/services.json";
+let SERVICE_CONFIG = {};
 
 function addUnavailableBadge(card) {
   if (card.querySelector(".service-status")) return;
@@ -468,6 +470,38 @@ function setServiceCardState(card, state) {
   }
 }
 
+function renderPrice(element, service) {
+  if (!element || !service) return;
+
+  const regularPrice = service.price || "";
+  const salePrice = service.salePrice || "";
+
+  if (salePrice) {
+    element.innerHTML = `
+      <span class="service-price-original">${escapeEventText(regularPrice)}</span>
+      <span class="service-price-sale">${escapeEventText(salePrice)}</span>
+    `;
+    element.setAttribute(
+      "aria-label",
+      `${regularPrice} regular price, ${salePrice} special price`
+    );
+  } else {
+    element.textContent = regularPrice;
+    element.removeAttribute("aria-label");
+  }
+}
+
+function applyServiceDetails(card, service) {
+  if (!card || !service) return;
+
+  renderPrice(card.querySelector(".svc-price"), service);
+
+  const duration = card.querySelector(".svc-dur");
+  if (duration && service.duration) {
+    duration.textContent = service.duration;
+  }
+}
+
 function hideEmptyServiceGroups() {
   document.querySelectorAll(".svc-group").forEach((group) => {
     const cards = [...group.querySelectorAll(".svc-card[data-service]")];
@@ -475,9 +509,8 @@ function hideEmptyServiceGroups() {
   });
 }
 
-async function loadServiceAvailability() {
+async function loadServiceConfiguration() {
   const cards = document.querySelectorAll(".svc-card[data-service]");
-  if (!cards.length) return;
 
   try {
     const response = await fetch(`${SERVICES_CONFIG_URL}?v=${Date.now()}`, {
@@ -488,22 +521,31 @@ async function loadServiceAvailability() {
       throw new Error(`Services configuration returned HTTP ${response.status}`);
     }
 
-    const config = await response.json();
+    SERVICE_CONFIG = await response.json();
 
     cards.forEach((card) => {
       const serviceId = card.dataset.service;
-      const state = config?.[serviceId]?.state || "available";
-      setServiceCardState(card, state);
+      const service = SERVICE_CONFIG?.[serviceId];
+      applyServiceDetails(card, service);
+      setServiceCardState(card, service?.state || "available");
     });
 
     hideEmptyServiceGroups();
+    return SERVICE_CONFIG;
   } catch (error) {
-    console.error("Unable to load service availability:", error);
+    console.error("Unable to load service configuration:", error);
+    SERVICE_CONFIG = {};
     cards.forEach((card) => setServiceCardState(card, "available"));
+    return SERVICE_CONFIG;
   }
 }
 
-
+function getConfiguredService(serviceId, fallback = {}) {
+  return {
+    ...fallback,
+    ...(SERVICE_CONFIG?.[serviceId] || {})
+  };
+}
 
 
 /* ============================================================
@@ -512,6 +554,7 @@ async function loadServiceAvailability() {
 
 const LASH_STYLE_OPTIONS = {
   lift: {
+    serviceId: "lashLiftTint",
     tabId: "lash-choice-lift",
     title: "Lash Lift & Tint",
     image: "assets/service-lash-lift-tint.jpeg",
@@ -524,6 +567,7 @@ const LASH_STYLE_OPTIONS = {
     price: "$100"
   },
   natural: {
+    serviceId: "fullSet",
     tabId: "lash-choice-natural",
     title: "Natural Full Set",
     image: "assets/NewNatural.jpg",
@@ -535,7 +579,21 @@ const LASH_STYLE_OPTIONS = {
     duration: "1 hr 45 min",
     price: "$140"
   },
+  hybrid: {
+    serviceId: "hybridSet",
+    tabId: "lash-choice-hybrid",
+    title: "Hybrid Full Set",
+    image: "assets/card-hybrid.jpg",
+    imageAlt: "Hybrid Full Set lash result",
+    description:
+      "A balanced blend of classic and volume lashes that adds texture and fullness while keeping the finish soft and versatile.",
+    look: "Textured and balanced",
+    maintenance: "Refill every 2–3 weeks",
+    duration: "1 hr 45 min",
+    price: "$150"
+  },
   volume: {
+    serviceId: "volumeSet",
     tabId: "lash-choice-volume",
     title: "Volume Set",
     image: "assets/card-volume.jpg",
@@ -546,6 +604,19 @@ const LASH_STYLE_OPTIONS = {
     maintenance: "Refill every 2–3 weeks",
     duration: "2 hr",
     price: "$155"
+  },
+  foreign: {
+    serviceId: "foreignFill",
+    tabId: "lash-choice-foreign",
+    title: "Foreign Fill",
+    image: "assets/foreign-fill-result.jpg",
+    imageAlt: "Foreign Fill lash extension result",
+    description:
+      "This service is for you if you already have lashes done by a different artist. Anna will assess your existing set, remove outgrown lashes as needed, and blend fresh extensions into the remaining work.",
+    look: "Refresh and blend",
+    maintenance: "Existing extensions from another artist",
+    duration: "1 hr 30 min",
+    price: "$75"
   }
 };
 
@@ -605,6 +676,12 @@ function initLashStyleFinder() {
       return;
     }
 
+    const service = getConfiguredService(option.serviceId, {
+      price: option.price,
+      duration: option.duration,
+      salePrice: ""
+    });
+
     activeStyle = styleKey;
     result.classList.add("is-updating");
 
@@ -623,8 +700,8 @@ function initLashStyleFinder() {
       resultDescription.textContent = option.description;
       resultLook.textContent = option.look;
       resultMaintenance.textContent = option.maintenance;
-      resultDuration.textContent = option.duration;
-      resultPrice.textContent = option.price;
+      resultDuration.textContent = service.duration || option.duration;
+      renderPrice(resultPrice, service);
       resultBook.dataset.bookService = option.title;
       resultBook.setAttribute(
         "aria-label",
@@ -797,7 +874,7 @@ function initJewelryStyleFinder() {
 
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await loadServiceAvailability();
+  await loadServiceConfiguration();
 
   document.querySelectorAll("[data-book]").forEach((el) => {
     el.classList.add("anywhere-book-now-button");

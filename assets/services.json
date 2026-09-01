@@ -1,54 +1,100 @@
 {
   "fullSet": {
     "name": "Natural Full Set",
-    "state": "available"
+    "state": "available",
+    "price": "$140",
+    "duration": "1 hr 45 min",
+    "salePrice": ""
   },
   "refill": {
     "name": "Natural Refill",
-    "state": "available"
+    "state": "available",
+    "price": "$65",
+    "duration": "1 hr",
+    "salePrice": ""
   },
   "hybridSet": {
     "name": "Hybrid Full Set",
-    "state": "available"
+    "state": "available",
+    "price": "$150",
+    "duration": "1 hr 45 min",
+    "salePrice": ""
   },
   "hybridRefill": {
     "name": "Hybrid Refill",
-    "state": "available"
+    "state": "available",
+    "price": "$70",
+    "duration": "1 hr 15 min",
+    "salePrice": ""
   },
   "volumeSet": {
     "name": "Volume Set",
-    "state": "available"
+    "state": "available",
+    "price": "$155",
+    "duration": "2 hr",
+    "salePrice": ""
   },
   "volumeRefill": {
     "name": "Volume Refill",
-    "state": "available"
+    "state": "available",
+    "price": "$75",
+    "duration": "1 hr 15 min",
+    "salePrice": ""
+  },
+  "foreignFill": {
+    "name": "Foreign Fill",
+    "state": "available",
+    "price": "$75",
+    "duration": "1 hr 30 min",
+    "salePrice": ""
   },
   "lashLiftTint": {
     "name": "Lash Lift & Tint",
-    "state": "available"
+    "state": "available",
+    "price": "$100",
+    "duration": "1 hr 15 min",
+    "salePrice": ""
   },
   "browTintTweeze": {
     "name": "Brow Tint & Tweeze",
-    "state": "available"
+    "state": "available",
+    "price": "$35",
+    "duration": "45 min",
+    "salePrice": ""
   },
   "lashRemoval": {
     "name": "Lash Removal",
-    "state": "available"
+    "state": "available",
+    "price": "$30",
+    "duration": "45 min",
+    "salePrice": ""
   },
   "powderBrows": {
     "name": "Powder Brows",
-    "state": "hidden"
+    "state": "hidden",
+    "price": "$500",
+    "duration": "2 hr 30 min \u00b7 touch-up incl.",
+    "salePrice": ""
   },
   "lipBlush": {
     "name": "Lip Blush",
-    "state": "hidden"
+    "state": "hidden",
+    "price": "$500",
+    "duration": "2 hr 30 min \u00b7 touch-up incl.",
+    "salePrice": ""
   },
   "naturalEyeliner": {
     "name": "Natural Eyeliner",
-    "state": "hidden"
+    "state": "hidden",
+    "price": "$400",
+    "duration": "2 hr \u00b7 touch-up incl.",
+    "salePrice": ""
   },
   "permanentJewelryFitting": {
     "name": "Permanent Jewelry Fitting",
-    "state": "available"
+    "state": "available",
+    "price": "Price varies",
+    "duration": "Approx. 15 min per person",
+    "salePrice": ""
   }
 }

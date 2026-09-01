@@ -307,6 +307,19 @@ p { margin: 0 0 1rem; }
   font-weight: 600;
   color: var(--burgundy);
 }
+.service-price-original {
+  margin-right: 0.45rem;
+  color: rgba(64, 63, 65, 0.62);
+  font-size: 0.78em;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.service-price-sale {
+  color: var(--burgundy);
+  font-weight: 700;
+}
+
 .svc-dur {
   font-size: 0.74rem;
   letter-spacing: 0.12em;
@@ -4896,5 +4909,71 @@ p { margin: 0 0 1rem; }
   .jewelry-find-piece-actions .btn {
     flex: 1 1 100%;
     text-align: center;
+  }
+}
+
+
+/* ============================================================
+   BEAUTY LODGE V4.0.4 — LASH SERVICE + STYLE FINDER UPDATE
+   Seven lash services: center the three-card second row on desktop.
+   Five finder choices: center the two-card second row on desktop.
+   ============================================================ */
+
+.svc-card[data-service="foreignFill"] .svc-img {
+  object-position: 50% 48%;
+}
+
+@media (min-width: 1101px) {
+  .svc-group-four .svc-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .svc-group-four .svc-grid > .svc-card {
+    grid-column: span 2;
+  }
+
+  .svc-group-four .svc-grid > .svc-card:nth-last-child(3) {
+    grid-column: 2 / span 2;
+  }
+
+  .svc-group-four .svc-grid > .svc-card:nth-last-child(2) {
+    grid-column: 4 / span 2;
+  }
+
+  .svc-group-four .svc-grid > .svc-card:last-child {
+    grid-column: 6 / span 2;
+  }
+
+  .lash-choice-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lash-choice {
+    grid-column: span 2;
+  }
+
+  .lash-choice:nth-last-child(2) {
+    grid-column: 2 / span 2;
+  }
+
+  .lash-choice:last-child {
+    grid-column: 4 / span 2;
+  }
+}
+
+@media (max-width: 1100px) {
+  .svc-group-four .svc-grid > .svc-card,
+  .svc-group-four .svc-grid > .svc-card:nth-last-child(3),
+  .svc-group-four .svc-grid > .svc-card:nth-last-child(2),
+  .svc-group-four .svc-grid > .svc-card:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 980px) {
+  .lash-choice,
+  .lash-choice:nth-last-child(2),
+  .lash-choice:last-child {
+    grid-column: auto;
   }
 }

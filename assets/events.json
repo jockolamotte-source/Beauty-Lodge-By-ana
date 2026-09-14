@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T14:00:08.395977+00:00",
+  "updatedAt": "2026-09-14T19:11:30.571920+00:00",
   "events": [
     {
       "title": "Art Prize Art Battle",
@@ -10,11 +10,27 @@
       "allDay": false
     },
     {
+      "title": "Fall Fest Grandville",
+      "description": "",
+      "location": "Grandville, MI, USA",
+      "start": "2026-10-03T11:00:00-04:00",
+      "end": "2026-10-03T16:00:00-04:00",
+      "allDay": false
+    },
+    {
       "title": "Simply The Best Aesthetics - Open House",
       "description": "",
       "location": "",
       "start": "2026-10-06T16:00:00-04:00",
       "end": "2026-10-06T19:00:00-04:00",
+      "allDay": false
+    },
+    {
+      "title": "Byron Center Fine Arts Boosters Craft Show",
+      "description": "",
+      "location": "8500 Burlingame Ave SW, Byron Center, MI 49315, USA",
+      "start": "2026-11-14T09:00:00-05:00",
+      "end": "2026-11-14T16:00:00-05:00",
       "allDay": false
     },
     {

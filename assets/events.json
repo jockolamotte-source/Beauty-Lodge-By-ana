@@ -1,6 +1,14 @@
 {
-  "updatedAt": "2026-10-19T14:14:17.272286+00:00",
+  "updatedAt": "2026-10-19T19:57:29.629583+00:00",
   "events": [
+    {
+      "title": "Haircut",
+      "description": "",
+      "location": "",
+      "start": "2026-10-21T00:00:00+00:00",
+      "end": "2026-10-22T23:59:59.999999+00:00",
+      "allDay": true
+    },
     {
       "title": "Byron Center Fine Arts Boosters Craft Show",
       "description": "",

@@ -2,7 +2,7 @@
    Beauty Lodge by Anna — site behavior
    ============================================================ */
 
-const SETMORE_URL = "https://beautylodgebyanna.setmore.com";
+const SETMORE_URL = "https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVBTqDX7K2qnFdunht10Lp5jnxLMEkZ8B/kXOoQtoiyScakXNPERwpu/sAjdgEVRMvGF7PMqJqxBj0uteFKEkTOI8nLOM/DBPJxhsaCMmBR3sXPGSXRW4MNX5dICTwF5Q0wyjWvnS1E/dOY5EdDVMphTy9137gTZNq0akRiCakWYOvlgzzwbzPQjkWGW9AgXBx0aXlIrbApVRSm55ULT9LZGV1BYu2ByJvKlKZEAH8XBEsC9fqLGJix8/Mz+2kam1AWnXN8i/vCWCCHLRffa221OBbw0JWFi1jTfRuprid93MSKSZS7ClKtU0wEvw14TonXLWYQX8UBp55VDysCWRGbYTO5Gy2lnYnytKrM02bQ93oR1o8QpuCKmK6L1B8HXPi1BQUao8WNC/Fmyg5KqHFT6JLP0D6Q7a1NxVSsaSQSjTm3jmc9omrUfbVhjyLqAVTL1npqQEJvQwbYkGkd2S8kLopBo07R48robKsvp7/YxY";
 const INSTAGRAM_URL =
   "https://www.instagram.com/beauty_lodge_by_anna/";
 
